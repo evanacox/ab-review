@@ -1,19 +1,23 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+//======---------------------------------------------------------------======//
+//                                                                           //
+// Copyright 2022 Evan Cox <evanacox00@gmail.com>. All rights reserved.      //
+//                                                                           //
+// Use of this source code is governed by a BSD-style license that can be    //
+// found in the LICENSE file at the root of this project, or at the          //
+// following link: https://opensource.org/licenses/BSD-3-Clause              //
+//                                                                           //
+//======---------------------------------------------------------------======//
+
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import "@picocss/pico";
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

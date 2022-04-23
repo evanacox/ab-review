@@ -9,13 +9,12 @@
 //======---------------------------------------------------------------======//
 
 import React from "react";
-import Nav from "./layout/Nav";
+import { render, screen } from "@testing-library/react";
+import Nav from "./Nav";
 
-export default function App(): JSX.Element {
-  return (
-    <div className="App">
-      <Nav name={"Calculus Review"} />
-      <main className="container"></main>
-    </div>
-  );
-}
+test("navbar renders arbitrary name", () => {
+  for (const s of ["Hello, Test!", "AB Review", "230948230"]) {
+    render(<Nav name={s} />);
+    expect(screen.getByText(new RegExp(`${s}`))).toBeInTheDocument();
+  }
+});

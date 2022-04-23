@@ -9,13 +9,32 @@
 //======---------------------------------------------------------------======//
 
 import React from "react";
-import Nav from "./layout/Nav";
 
-export default function App(): JSX.Element {
+interface Props {
+  name: string;
+}
+
+export default function Nav(props: Props): JSX.Element {
   return (
-    <div className="App">
-      <Nav name={"Calculus Review"} />
-      <main className="container"></main>
-    </div>
+    <nav className="container-fluid">
+      <ul>
+        <li>
+          <strong>{props.name}</strong>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <a href="src/layout/Nav#">Link</a>
+        </li>
+        <li>
+          <a href="src/layout/Nav#">Link</a>
+        </li>
+        <li>
+          <a href="src/layout/Nav#" role="button">
+            Button
+          </a>
+        </li>
+      </ul>
+    </nav>
   );
 }

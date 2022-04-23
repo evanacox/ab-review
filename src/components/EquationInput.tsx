@@ -9,13 +9,24 @@
 //======---------------------------------------------------------------======//
 
 import React from "react";
-import Nav from "./layout/Nav";
 
-export default function App(): JSX.Element {
-  return (
-    <div className="App">
-      <Nav name={"Calculus Review"} />
-      <main className="container"></main>
-    </div>
-  );
+export interface EquationInputProps {}
+
+interface EquationState {
+  input: string;
 }
+
+export class EquationInput extends React.Component<EquationInputProps, {}> {
+  public state: EquationState;
+
+  public constructor(props: EquationInputProps) {
+    super(props);
+    this.state = { input: "" };
+  }
+
+  public render(): JSX.Element {
+    return <h1>Equation Input!</h1>;
+  }
+}
+
+export default EquationInput;
