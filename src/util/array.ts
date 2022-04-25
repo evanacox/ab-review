@@ -8,22 +8,19 @@
 //                                                                           //
 //======---------------------------------------------------------------======//
 
-import React from "react";
-import ReactDOM from "react-dom";
-import App from "./App";
-import "@picocss/pico";
-import "./index.css";
-import { addStyles } from "react-mathquill";
-
-// inject mathquill required styles into <head>
-addStyles();
-
-function RootApp(): JSX.Element {
-  return (
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  );
+export function shuffleInPlace<T>(array: T[]) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    const temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
 }
 
-ReactDOM.render(<RootApp />, document.getElementById("root"));
+export function shuffleCopy<T>(array: T[]): T[] {
+  const copy = [...array];
+
+  shuffleInPlace(copy);
+
+  return copy;
+}

@@ -10,12 +10,21 @@
 
 import React from "react";
 import Nav from "./layout/Nav";
+import Footer from "./layout/Footer";
+import Main from "./layout/Main";
 
-export default function App(): JSX.Element {
+export function App(): JSX.Element {
   return (
-    <div className="App">
+    <div>
       <Nav name={"Calculus Review"} />
-      <main className="container"></main>
+      <Main />
+      <Footer
+        copyrightStartYear={2022}
+        githubLink={"https://www.github.com/evanacox"}
+        githubRepoName={"ab-review"}
+      />
     </div>
   );
 }
+
+export default App;

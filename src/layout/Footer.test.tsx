@@ -9,21 +9,29 @@
 //======---------------------------------------------------------------======//
 
 import React from "react";
-import ReactDOM from "react-dom";
-import App from "./App";
-import "@picocss/pico";
-import "./index.css";
-import { addStyles } from "react-mathquill";
+import { render, screen } from "@testing-library/react";
+import Footer from "./Footer";
 
-// inject mathquill required styles into <head>
-addStyles();
+test("navbar renders current year correctly", () => {
+  const currYear = new Date().getFullYear();
 
-function RootApp(): JSX.Element {
-  return (
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
+  render(
+    <Footer copyrightStartYear={currYear} githubLink={""} githubRepoName={""} />
   );
-}
 
-ReactDOM.render(<RootApp />, document.getElementById("root"));
+  expect(
+    screen.getByText(new RegExp(`© ${currYear} Evan Cox.`))
+  ).toBeInTheDocument();
+});
+
+test("navbar renders previous year correctly", () => {
+  const currYear = new Date().getFullYear() - 1;
+
+  render(
+    <Footer copyrightStartYear={currYear} githubLink={""} githubRepoName={""} />
+  );
+
+  expect(
+    screen.getByText(new RegExp(`© ${currYear}-${currYear + 1} Evan Cox.`))
+  ).toBeInTheDocument();
+});

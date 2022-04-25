@@ -10,11 +10,11 @@
 
 import React from "react";
 
-interface Props {
+export interface NavProps {
   name: string;
 }
 
-export default function Nav(props: Props): JSX.Element {
+export function Nav(props: NavProps): JSX.Element {
   return (
     <nav className="container-fluid">
       <ul>
@@ -24,17 +24,19 @@ export default function Nav(props: Props): JSX.Element {
       </ul>
       <ul>
         <li>
-          <a href="src/layout/Nav#">Link</a>
+          <a href="#">Integration</a>
         </li>
         <li>
-          <a href="src/layout/Nav#">Link</a>
+          <a href="#">Differentiation</a>
         </li>
         <li>
-          <a href="src/layout/Nav#" role="button">
-            Button
+          <a href="#" role="button">
+            Random
           </a>
         </li>
       </ul>
     </nav>
   );
 }
+
+export default Nav;

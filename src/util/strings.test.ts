@@ -8,22 +8,10 @@
 //                                                                           //
 //======---------------------------------------------------------------======//
 
-import React from "react";
-import ReactDOM from "react-dom";
-import App from "./App";
-import "@picocss/pico";
-import "./index.css";
-import { addStyles } from "react-mathquill";
+import { replaceIfNotSubstring } from "./strings";
 
-// inject mathquill required styles into <head>
-addStyles();
-
-function RootApp(): JSX.Element {
-  return (
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  );
-}
-
-ReactDOM.render(<RootApp />, document.getElementById("root"));
+test("replaceIfNotSubstring works", () => {
+  expect(replaceIfNotSubstring("\\int{}^{}", "int", "\\int{}^{}", "\\int{}^{}")).toBe("\\int{}^{}");
+  expect(replaceIfNotSubstring("int", "int", "\\int{}^{}", "\\int{}^{}")).toBe("\\int{}^{}");
+  expect(replaceIfNotSubstring("\\int{}^{}int", "int", "\\int{}^{}", "\\int{}^{}")).toBe("\\int{}^{}\\int{}^{}");
+});

@@ -9,21 +9,32 @@
 //======---------------------------------------------------------------======//
 
 import React from "react";
-import ReactDOM from "react-dom";
-import App from "./App";
-import "@picocss/pico";
-import "./index.css";
-import { addStyles } from "react-mathquill";
 
-// inject mathquill required styles into <head>
-addStyles();
+export interface FooterProps {
+  copyrightStartYear: number;
+  githubLink: string;
+  githubRepoName: string;
+}
 
-function RootApp(): JSX.Element {
+export function Footer(props: FooterProps): JSX.Element {
+  const localYear = new Date().getFullYear();
+  const licenseLink = `${props.githubLink}/${props.githubRepoName}/blob/master/LICENSE`;
+  const copyrightYears =
+    localYear === props.copyrightStartYear
+      ? `${localYear}`
+      : `${props.copyrightStartYear}-${localYear}`;
+
   return (
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
+    <footer className={"container-fluid"}>
+      <small>
+        © {copyrightYears} Evan Cox. Distributed under the&nbsp;
+        <a href={licenseLink} className={"secondary"}>
+          BSD 3-Clause License
+        </a>
+        .
+      </small>
+    </footer>
   );
 }
 
-ReactDOM.render(<RootApp />, document.getElementById("root"));
+export default Footer;
