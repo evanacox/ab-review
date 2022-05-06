@@ -34,3 +34,14 @@ export function replaceIfNotSubstring(
 
   return haystack;
 }
+
+const alphabet = "abcdefghijklmnopqrstuvwxyz";
+const alphabetCapital = alphabet.toUpperCase();
+
+export function indexToLetter(index: number): string {
+  return alphabet[index];
+}
+
+export function indexToCapitalLetter(index: number): string {
+  return alphabetCapital[index];
+}

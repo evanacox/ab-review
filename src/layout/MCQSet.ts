@@ -8,22 +8,19 @@
 //                                                                           //
 //======---------------------------------------------------------------======//
 
-import React from "react";
-import ReactDOM from "react-dom";
-import App from "./App";
-import "@picocss/pico";
-import "./index.css";
-import { addStyles } from "react-mathquill";
+import { MultipleChoiceQuestion } from "../components/MultipleChoiceHandler";
 
-// inject mathquill required styles into <head>
-addStyles();
-
-function RootApp(): JSX.Element {
-  return (
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  );
+export interface MCQSetCorrectIncorrectInfo {
+  answers: Map<number, boolean>;
 }
 
-ReactDOM.render(<RootApp />, document.querySelector("root"));
+export interface MCQSetProps {
+  questions: MultipleChoiceQuestion[];
+  onFinish: (info: MCQSetCorrectIncorrectInfo) => void;
+}
+
+export interface MCQSetState {
+  questionIndex: number;
+  needChange: boolean;
+  info: MCQSetCorrectIncorrectInfo;
+}
