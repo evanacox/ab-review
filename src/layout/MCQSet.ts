@@ -8,7 +8,7 @@
 //                                                                           //
 //======---------------------------------------------------------------======//
 
-import { MultipleChoiceQuestion } from "../components/MultipleChoiceHandler";
+import { MultipleChoiceQuestion } from "../components/MultipleChoiceQuestion";
 
 export interface MCQSetCorrectIncorrectInfo {
   answers: Map<number, boolean>;

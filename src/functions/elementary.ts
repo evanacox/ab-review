@@ -8,13 +8,4 @@
 //                                                                           //
 //======---------------------------------------------------------------======//
 
-import React from "react";
-import { render, screen } from "@testing-library/react";
-import Nav from "./Nav";
-
-test("navbar renders arbitrary name", () => {
-  for (const s of ["Hello, Test!", "AB Review", "230948230"]) {
-    render(<Nav name={s} onQuestionUpload={() => {}} onPageChange={() => {}} />);
-    expect(screen.getByText(new RegExp(`${s}`))).toBeInTheDocument();
-  }
-});
+export default {};

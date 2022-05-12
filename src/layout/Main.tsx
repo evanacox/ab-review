@@ -11,15 +11,11 @@
 import React from "react";
 import { Provider, Node } from "@nteract/mathjax";
 import NormalMCQSet from "../layout/NormalMCQSet";
-import FastMCQuestion from "../components/FastMCQuestion";
-import { indexToLetter } from "../util/strings";
-import "./Main.css";
 import FastMCQSet from "./FastMCQSet";
-
-interface MainState {
-  questionIndex: number;
-  needChange: boolean;
-}
+import "./Main.css";
+import { MultipleChoiceSet } from "../components/MultipleChoiceQuestion";
+import { SwitchTransition, CSSTransition } from "react-transition-group";
+import { Page } from "./Nav";
 
 const questions = [
   {
@@ -70,28 +66,68 @@ const questions = [
   },
 ];
 
-export class Main extends React.Component<{}, MainState> {
-  public constructor(props: any) {
-    super(props);
+interface MainProps {
+  set: MultipleChoiceSet | null;
+  page: Page;
+}
 
-    this.state = { questionIndex: 0, needChange: false };
+export class Main extends React.Component<MainProps, {}> {
+  public constructor(props: MainProps) {
+    super(props);
   }
 
   public render(): JSX.Element {
     return (
       <main className="container">
         <Provider>
-          <article>
-            <h2>Review: AB</h2>
-            <NormalMCQSet questions={questions} onFinish={(info) => console.log("done! got info: ", info)} />
-          </article>
-          <article>
-            <h2>Review: AB But Different</h2>
-            <FastMCQSet questions={questions} onFinish={(info) => console.log("done! got info: ", info)} />
-          </article>
+          <SwitchTransition>
+            <CSSTransition key={this.props.page} timeout={150} classNames={"main-fade"}>
+              {this.renderPage()}
+            </CSSTransition>
+          </SwitchTransition>
         </Provider>
       </main>
     );
+  }
+
+  private renderPage(): JSX.Element {
+    const questions = this.props.set === null ? [] : this.props.set.questions;
+
+    switch (this.props.page) {
+      case Page.Home: {
+        return (
+          <article>
+            <h2>Review: AB</h2>
+            <button>Mixed Practice</button>
+          </article>
+        );
+      }
+      case Page.Integration: {
+        return (
+          <article>
+            <h2>Mixed Integration Practice</h2>
+
+            <FastMCQSet questions={questions} onFinish={(info) => console.log("done! got info: ", info)} />
+          </article>
+        );
+      }
+      case Page.Differentiation: {
+        return (
+          <article>
+            <h2>Mixed Differentiation Practice</h2>
+            <FastMCQSet questions={questions} onFinish={(info) => console.log("done! got info: ", info)} />
+          </article>
+        );
+      }
+      case Page.MockExam: {
+        return (
+          <article>
+            <h2>Mock Exam</h2>
+            <NormalMCQSet questions={questions} onFinish={(info) => console.log("done! got info: ", info)} />
+          </article>
+        );
+      }
+    }
   }
 }
 

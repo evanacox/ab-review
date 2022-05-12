@@ -11,9 +11,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
+import { addStyles } from "react-mathquill";
 import "@picocss/pico";
 import "./index.css";
-import { addStyles } from "react-mathquill";
 
 // inject mathquill required styles into <head>
 addStyles();

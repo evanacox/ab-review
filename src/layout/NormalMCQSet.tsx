@@ -23,6 +23,16 @@ export class NormalMCQSet extends React.Component<MCQSetProps, MCQSetState> {
   }
 
   public render(): JSX.Element {
+    const inner =
+      this.props.questions.length > 0 ? (
+        <NormalMCQuestion
+          question={this.props.questions[this.state.questionIndex]}
+          onNext={(handler, index) => this.onNext(handler, index)}
+        />
+      ) : (
+        <div></div>
+      );
+
     return (
       <div>
         <SwitchTransition>
@@ -32,10 +42,7 @@ export class NormalMCQSet extends React.Component<MCQSetProps, MCQSetState> {
             classNames={"normal-fade"}
             addEndListener={() => this.onTransitionChange()}
           >
-            <NormalMCQuestion
-              question={this.props.questions[this.state.questionIndex]}
-              onNext={(handler, index) => this.onNext(handler, index)}
-            />
+            {inner}
           </CSSTransition>
         </SwitchTransition>
       </div>
@@ -49,21 +56,21 @@ export class NormalMCQSet extends React.Component<MCQSetProps, MCQSetState> {
     // when we go back in a second time, needChange will be false, so we know to actually update
     // the question that time
     if (this.state.needChange) {
-      return this.setState((_1, _2) => ({ needChange: false }));
+      return super.setState((_1, _2) => ({ needChange: false }));
     }
 
     if (this.state.questionIndex + 1 === this.props.questions.length) {
       this.props.onFinish(this.state.info);
-      this.setState((state, props) => ({ info: { answers: new Map<number, boolean>() } }));
+      super.setState((state, props) => ({ info: { answers: new Map<number, boolean>() } }));
     }
 
-    return this.setState((state, props) => ({
+    return super.setState((state, props) => ({
       questionIndex: (state.questionIndex + 1) % props.questions.length,
     }));
   }
 
   private onNext(handler: MultipleChoiceHandler, selectedIndex: number): void {
-    this.setState((state, _) => {
+    super.setState((state, _) => {
       state.info.answers.set(state.questionIndex, handler.isCorrect(selectedIndex));
 
       return {

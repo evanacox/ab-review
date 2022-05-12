@@ -73,7 +73,7 @@ export class EquationInput extends React.Component<EquationInputProps, {}> {
       }
     }
 
-    this.setState((state, props) => {
+    super.setState((state, props) => {
       return { input: mathField.latex() };
     });
   }

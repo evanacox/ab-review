@@ -9,7 +9,10 @@
 //======---------------------------------------------------------------======//
 
 import React from "react";
-import { MultipleChoiceHandler, MultipleChoiceQuestion } from "./MultipleChoiceHandler";
+import { MultipleChoiceHandler } from "./MultipleChoiceHandler";
+import { MultipleChoiceQuestion } from "./MultipleChoiceQuestion";
+import { closeModal, forceCloseWithoutAnimation, openModal } from "../util/modal";
+import { Node } from "@nteract/mathjax";
 import "./FastMCQuestion.css";
 
 export interface FastMCProps {
@@ -23,13 +26,20 @@ interface FastMCState {
 }
 
 export class FastMCQuestion extends React.Component<FastMCProps, FastMCState> {
+  private readonly modalRef: React.RefObject<HTMLElement>;
+
   public constructor(props: FastMCProps) {
     super(props);
 
+    this.modalRef = React.createRef();
     this.state = {
       handler: new MultipleChoiceHandler(this.props.question),
       selectedIndex: null,
     };
+  }
+
+  public componentWillUnmount(): void {
+    forceCloseWithoutAnimation(this.modalRef);
   }
 
   private mapIndexToClasses(index: number): string {
@@ -57,14 +67,41 @@ export class FastMCQuestion extends React.Component<FastMCProps, FastMCState> {
             </button>
           ))}
         </div>
+        <dialog ref={this.modalRef}>
+          <article>
+            <header>Incorrect!</header>
+            <section>
+              <p>The correct answer is: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+              <br />
+              <Node>{"\\frac{-b\\pm\\sqrt{b^2 - 4ac}}{2a}"}</Node>
+            </section>
+            <footer>
+              <button onClick={() => this.onModalClick()}>Next</button>
+            </footer>
+          </article>
+        </dialog>
       </div>
     );
   }
 
-  private onClick(index: number) {
-    this.props.onNext(this.state.handler, index);
+  public resetIndex(): void {
+    super.setState((state, _) => ({ selectedIndex: null }));
+  }
 
-    this.setState((state, _) => ({ handler: state.handler, selectedIndex: index }));
+  private onModalClick(): void {
+    closeModal(this.modalRef);
+
+    this.props.onNext(this.state.handler, this.state.selectedIndex!);
+  }
+
+  private onClick(index: number): void {
+    if (this.state.handler.isCorrect(index)) {
+      this.props.onNext(this.state.handler, index);
+    } else {
+      openModal(this.modalRef);
+    }
+
+    super.setState((state, _) => ({ handler: state.handler, selectedIndex: index }));
   }
 }
 

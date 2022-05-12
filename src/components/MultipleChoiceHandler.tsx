@@ -9,12 +9,7 @@
 //======---------------------------------------------------------------======//
 
 import { shuffleInPlace } from "../util/array";
-
-export interface MultipleChoiceQuestion {
-  prompt: JSX.Element;
-  incorrectAnswers: JSX.Element[];
-  correctAnswer: JSX.Element;
-}
+import { MultipleChoiceQuestion } from "./MultipleChoiceQuestion";
 
 interface MultipleChoiceState {
   question: MultipleChoiceQuestion;
@@ -42,7 +37,7 @@ export class MultipleChoiceHandler {
   }
 
   public isCorrect(index: number): boolean {
-    return this.state.correctIndex === index;
+    return index === this.correctIndex();
   }
 
   public updateQuestion(question: MultipleChoiceQuestion) {
@@ -55,17 +50,18 @@ export class MultipleChoiceHandler {
     // tag each answer with an ID, so we can both know which one is selected,
     // and so we can know which one is correct. the correct answer is always
     // the one with the largest tag
+    const correct = question.correct.asInlineAnswer();
     const state = {
       question: question,
-      answers: question.incorrectAnswers.map((value) => value),
+      answers: question.incorrect.map((answer) => answer.asInlineAnswer()),
       correctIndex: -1,
     };
 
-    state.answers.push(question.correctAnswer);
+    state.answers.push(correct);
 
     shuffleInPlace(state.answers);
 
-    state.correctIndex = state.answers.findIndex((elem) => elem === question.correctAnswer);
+    state.correctIndex = state.answers.findIndex((elem) => elem === correct);
 
     return state;
   }

@@ -1,0 +1,28 @@
+[
+  {
+    "prompt": [
+      "Given `f(x)`, find `f'(x)`.",
+      "`f(x) = 2x^5 + \\frac{1}{\\sqrt{5e^6x}}`"
+    ],
+    "incorrectAnswers": [
+      "`f(g'(x))f'(x)`",
+      "`f(g(x))f'(g'(x))`",
+      "`f'(g'(x))`",
+      "`f(g'(x))`"
+    ],
+    "correctAnswer": "`f'(g(x))g'(x))`"
+  },
+  {
+    "prompt": [
+      "Given `f(x)`, find `\\lim\\limits_{x \\to \\infty} f(x)`.",
+      "`f(x) = \\frac{4x^2 - e^{-x}}{x^2}`"
+    ],
+    "incorrectAnswers": [
+      "at least `5`",
+      "{4774.3333}",
+      "{f(\\infty)}",
+      "{\\frac{x^4 + x^3 + x^2 + 5x}{x^2 - 4x^3 + 943x^2}}`"
+    ],
+    "correctAnswer": "`1`"
+  }
+]

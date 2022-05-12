@@ -9,7 +9,8 @@
 //======---------------------------------------------------------------======//
 
 import React from "react";
-import { MultipleChoiceHandler, MultipleChoiceQuestion } from "./MultipleChoiceHandler";
+import { MultipleChoiceHandler } from "./MultipleChoiceHandler";
+import { MultipleChoiceQuestion } from "./MultipleChoiceQuestion";
 import { indexToCapitalLetter, indexToLetter } from "../util/strings";
 import "./NormalMCQuestion.css";
 
@@ -53,6 +54,7 @@ export class NormalMCQuestion extends React.Component<NormalMCProps, NormalMCSta
     return (
       <div>
         {this.props.question.prompt}
+        <br />
         <fieldset>
           <div className={"mcq-container"}>{answers}</div>
         </fieldset>
@@ -64,7 +66,7 @@ export class NormalMCQuestion extends React.Component<NormalMCProps, NormalMCSta
   }
 
   private onRadioSelect(event: React.ChangeEvent<HTMLInputElement>): void {
-    this.setState((state, props) => ({
+    super.setState((state, props) => ({
       handler: state.handler,
       selectedIndex: parseInt(event.target.value),
       selectedButton: event.target,
@@ -74,7 +76,7 @@ export class NormalMCQuestion extends React.Component<NormalMCProps, NormalMCSta
   private onNextClick(event: React.MouseEvent<HTMLButtonElement>): void {
     this.props.onNext(this.state.handler, this.state.selectedIndex);
 
-    this.setState((state, props) => {
+    super.setState((state, props) => {
       if (state.selectedButton !== null) {
         state.selectedButton.checked = false; // this is a direct DOM manipulation, hacky but works
       }

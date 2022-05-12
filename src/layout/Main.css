@@ -7,3 +7,24 @@
 // following link: https://opensource.org/licenses/BSD-3-Clause              //
 //                                                                           //
 //======---------------------------------------------------------------======*/
+
+.main-fade-enter {
+    opacity: 0;
+}
+
+.main-fade-exit {
+    opacity: 1;
+}
+
+.main-fade-enter-active {
+    opacity: 1;
+}
+
+.main-fade-exit-active {
+    opacity: 0;
+}
+
+.main-fade-enter-active,
+.main-fade-exit-active {
+    transition: opacity 150ms;
+}

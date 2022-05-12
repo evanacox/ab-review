@@ -6,6 +6,7 @@
     "@nteract/mathjax": "^4.0.16",
     "@picocss/pico": "^1.5.0",
     "@types/react-transition-group": "^4.4.4",
+    "nerdamer": "^1.1.13",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-mathquill": "^1.0.2",
