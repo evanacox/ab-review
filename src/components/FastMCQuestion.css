@@ -24,6 +24,10 @@
 
 .input-grid {
     display: grid;
-    grid-gap: 10px;
-    grid-template-columns: repeat(auto-fill, auto);
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    justify-items: stretch;
+    align-items: stretch;
 }

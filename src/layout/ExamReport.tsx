@@ -1,4 +1,4 @@
-/*======---------------------------------------------------------------======//
+//======---------------------------------------------------------------======//
 //                                                                           //
 // Copyright 2022 Evan Cox <evanacox00@gmail.com>. All rights reserved.      //
 //                                                                           //
@@ -6,15 +6,6 @@
 // found in the LICENSE file at the root of this project, or at the          //
 // following link: https://opensource.org/licenses/BSD-3-Clause              //
 //                                                                           //
-//======---------------------------------------------------------------======*/
+//======---------------------------------------------------------------======//
 
-html {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    position: relative;
-}
-
-.MathJax {
-    font-size: 2.0em !important;
-}
+import React from "react";

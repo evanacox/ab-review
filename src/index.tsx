@@ -12,8 +12,26 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import { addStyles } from "react-mathquill";
+import { Provider } from "@nteract/mathjax";
 import "@picocss/pico";
 import "./index.css";
+
+const mathjaxConfig = {
+  CommonHTML: {
+    scale: 100,
+  },
+};
+
+// @ts-ignore
+window.MathJax = {
+  tex: {
+    macros: {
+      arcsec: "\\DeclareMathOperator{\\arcsec}{arcsec}\\arcsec",
+      arccsc: "\\DeclareMathOperator{\\arccsc}{arccsc}\\arccsc",
+      arccot: "\\DeclareMathOperator{\\arccot}{arccot}\\arccot",
+    },
+  },
+};
 
 // inject mathquill required styles into <head>
 addStyles();
@@ -21,7 +39,9 @@ addStyles();
 function RootApp(): JSX.Element {
   return (
     <React.StrictMode>
-      <App />
+      <Provider options={mathjaxConfig}>
+        <App />
+      </Provider>
     </React.StrictMode>
   );
 }

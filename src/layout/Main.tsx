@@ -16,6 +16,17 @@ import "./Main.css";
 import { MultipleChoiceSet } from "../components/MultipleChoiceQuestion";
 import { SwitchTransition, CSSTransition } from "react-transition-group";
 import { Page } from "./Nav";
+import {
+  differentiableTrigFunction,
+  elementaryIntegrableFunction,
+  empty,
+  Equation,
+  integrableTrigFunction,
+  inverseTrigFunction,
+  monomial,
+  sumDiffOfLength,
+} from "../functions/equations";
+import { uSubstitution } from "../functions/integration";
 
 const questions = [
   {
@@ -71,21 +82,25 @@ interface MainProps {
   page: Page;
 }
 
-export class Main extends React.Component<MainProps, {}> {
+interface MainState {
+  currentEquations: Equation[];
+}
+
+export class Main extends React.Component<MainProps, MainState> {
   public constructor(props: MainProps) {
     super(props);
+
+    this.state = { currentEquations: [empty()] };
   }
 
   public render(): JSX.Element {
     return (
       <main className="container">
-        <Provider>
-          <SwitchTransition>
-            <CSSTransition key={this.props.page} timeout={150} classNames={"main-fade"}>
-              {this.renderPage()}
-            </CSSTransition>
-          </SwitchTransition>
-        </Provider>
+        <SwitchTransition>
+          <CSSTransition key={this.props.page} timeout={150} classNames={"main-fade"}>
+            {this.renderPage()}
+          </CSSTransition>
+        </SwitchTransition>
       </main>
     );
   }
@@ -95,10 +110,33 @@ export class Main extends React.Component<MainProps, {}> {
 
     switch (this.props.page) {
       case Page.Home: {
+        const nodes = this.state.currentEquations.map((eq) => <Node>{eq.displayLatex()}</Node>);
+
         return (
           <article>
             <h2>Review: AB</h2>
-            <button>Mixed Practice</button>
+            <div className={"container-fluid"}>
+              <article>
+                <h2>Problems</h2>
+                {nodes}
+              </article>
+            </div>
+            <button
+              onClick={() =>
+                this.setState((state, props) => ({
+                  currentEquations: [
+                    uSubstitution(),
+                    sumDiffOfLength(3, () => elementaryIntegrableFunction(monomial())),
+                    inverseTrigFunction(monomial()),
+                    differentiableTrigFunction(monomial()),
+                    integrableTrigFunction(monomial()),
+                    elementaryIntegrableFunction(monomial()),
+                  ],
+                }))
+              }
+            >
+              Next
+            </button>
           </article>
         );
       }

@@ -38,16 +38,15 @@ export class FastMCQuestion extends React.Component<FastMCProps, FastMCState> {
     };
   }
 
-  public componentWillUnmount(): void {
-    forceCloseWithoutAnimation(this.modalRef);
-  }
-
   private mapIndexToClasses(index: number): string {
-    if (this.state.selectedIndex === null || this.state.selectedIndex !== index) {
+    if (
+      this.state.selectedIndex === null ||
+      (this.state.selectedIndex !== index && !this.state.handler.isCorrect(index))
+    ) {
       return "secondary outline";
     }
 
-    if (this.state.selectedIndex === this.state.handler.correctIndex()) {
+    if (this.state.handler.isCorrect(index)) {
       return "correct";
     }
 
@@ -57,29 +56,16 @@ export class FastMCQuestion extends React.Component<FastMCProps, FastMCState> {
   public render(): JSX.Element {
     this.state.handler.updateQuestion(this.props.question);
 
+    const answers = this.state.handler.answers().map((answer, i) => (
+      <button className={this.mapIndexToClasses(i)} value={i} key={i} onClick={(_) => this.onClick(i)}>
+        {answer}
+      </button>
+    ));
+
     return (
       <div>
         {this.props.question.prompt}
-        <div className={"input-grid"}>
-          {this.state.handler.answers().map((answer, i) => (
-            <button className={this.mapIndexToClasses(i)} value={i} key={i} onClick={(_) => this.onClick(i)}>
-              {answer}
-            </button>
-          ))}
-        </div>
-        <dialog ref={this.modalRef}>
-          <article>
-            <header>Incorrect!</header>
-            <section>
-              <p>The correct answer is: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
-              <br />
-              <Node>{"\\frac{-b\\pm\\sqrt{b^2 - 4ac}}{2a}"}</Node>
-            </section>
-            <footer>
-              <button onClick={() => this.onModalClick()}>Next</button>
-            </footer>
-          </article>
-        </dialog>
+        <div className={"input-grid"}>{answers}</div>
       </div>
     );
   }
@@ -88,17 +74,9 @@ export class FastMCQuestion extends React.Component<FastMCProps, FastMCState> {
     super.setState((state, _) => ({ selectedIndex: null }));
   }
 
-  private onModalClick(): void {
-    closeModal(this.modalRef);
-
-    this.props.onNext(this.state.handler, this.state.selectedIndex!);
-  }
-
   private onClick(index: number): void {
     if (this.state.handler.isCorrect(index)) {
       this.props.onNext(this.state.handler, index);
-    } else {
-      openModal(this.modalRef);
     }
 
     super.setState((state, _) => ({ handler: state.handler, selectedIndex: index }));

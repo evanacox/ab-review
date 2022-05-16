@@ -11,7 +11,7 @@
 import React from "react";
 import { Node } from "@nteract/mathjax";
 import { Question, Convert } from "../util/questions.generated";
-import Nerdamer from "nerdamer";
+import Algebrite from "algebrite";
 
 export interface SingleAnswer {
   asInlineAnswer(): JSX.Element;
@@ -181,7 +181,7 @@ function parseSingleAnswer(answer: string): SingleAnswer {
     // some stuff may or may not be understandable by Nerdamer (e.g `f(g'(x))`), if it
     // isn't we just fall back to trying it as LaTeX
     try {
-      return new EquationAnswer(Nerdamer.convertToLaTeX(elem));
+      return new EquationAnswer(Algebrite.printlatex(elem));
     } catch (_) {
       return new EquationAnswer(elem);
     }
