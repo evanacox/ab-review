@@ -1,0 +1,25 @@
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+name: Build Site
+
+jobs:
+  build:
+    name: Build & Deploy Pages
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Install Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 14
+          cache: 'npm'
+      - run: npm ci
+      - run: npm run deploy -- -m "Deploy React app to GitHub Pages"
+        
