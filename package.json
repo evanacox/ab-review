@@ -2,6 +2,7 @@
   "name": "calculus-review",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://pages.evanacox.io/ab-review
   "dependencies": {
     "@nteract/mathjax": "^4.0.16",
     "@picocss/pico": "^1.5.0",
