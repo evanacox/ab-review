@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/ab-review/static/css/main.c4a8bd28.css",
-    "main.js": "/ab-review/static/js/main.7f140c9c.js",
+    "main.css": "/ab-review/static/css/main.794f099e.css",
+    "main.js": "/ab-review/static/js/main.3720af32.js",
     "index.html": "/ab-review/index.html",
-    "main.c4a8bd28.css.map": "/ab-review/static/css/main.c4a8bd28.css.map",
-    "main.7f140c9c.js.map": "/ab-review/static/js/main.7f140c9c.js.map"
+    "main.794f099e.css.map": "/ab-review/static/css/main.794f099e.css.map",
+    "main.3720af32.js.map": "/ab-review/static/js/main.3720af32.js.map"
   },
   "entrypoints": [
-    "static/css/main.c4a8bd28.css",
-    "static/js/main.7f140c9c.js"
+    "static/css/main.794f099e.css",
+    "static/js/main.3720af32.js"
   ]
 }
