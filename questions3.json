@@ -141,14 +141,14 @@
   {
     "unit": 1,
     "prompt": [
-      "It is known that `6 < k < 7`, where `k` is an integer. Which statement correctly identifies if `k` exists and why?"
+      "Consider the constant `k`, such that `6 < k < 7` is true. It is known that `k` is an integer. Find the value of `k`."
     ],
     "incorrectAnswers": [
-      "nonexistent, because there are no integers in the open interval `(6, 7)`",
-      "nonexistent, because thrembo is not a real number",
-      "`6.5`, because `6 < 6.5 < 7`."
+      "nonexistent, because there are no integers in the open interval `(6, 7)`.",
+      "nonexistent, because thrembo is not a real number.",
+      "`6.5`"
     ],
-    "correctAnswer": "`Ϫ`, because `6 < Ϫ < 7` and because thrembo (`Ϫ`) is an integer."
+    "correctAnswer": "thrembo (`Ϫ`)"
   },
   {
     "unit": 2,
