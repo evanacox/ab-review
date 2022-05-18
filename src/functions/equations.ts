@@ -9,7 +9,7 @@
 //======---------------------------------------------------------------======//
 
 import { randomArrayElement, randomBoolWithChance, randomWithin } from "../util/random";
-import { intoLatex } from "./style";
+import { manipulatedEquationIntoLatex } from "./style";
 
 export interface Equation {
   asLatex(): string;
@@ -121,11 +121,13 @@ export function constantOf(n: number): Equation {
 }
 
 export function constant(): Equation {
+  const mulBy = randomBoolWithChance(0.3) ? constantOf(-1) : constantOf(1);
+
   if (randomBoolWithChance(0.3)) {
-    return fraction(constantBetween(), constantBetween());
+    return multiply(mulBy, fraction(constantBetween(), constantBetween()));
   }
 
-  return constantBetween();
+  return multiply(mulBy, constantBetween());
 }
 
 function emptyOrConstant(n: number | null): Equation {
@@ -226,10 +228,10 @@ export function differentiableTrigFunction(inner: Equation = x()): Equation {
 
 const integrableTrigFunctions: Equation[] = [
   ...standardTrigFunctions,
-  new EquationBase("{\\sec^{2}($)}", "((sec($))^2)"),
-  new EquationBase("{{\\sec($)}{\\tan($)}}", "(sec($) * tan($))"),
-  new EquationBase("{\\csc^{2}($)}", "((csc($))^2)"),
-  new EquationBase("{{\\csc($)}{\\cot($)}}", "(csc($) * cot($))"),
+  // new EquationBase("{\\sec^{2}($)}", "((sec($))^2)"),
+  // new EquationBase("{{\\sec($)}{\\tan($)}}", "(sec($) * tan($))"),
+  // new EquationBase("{\\csc^{2}($)}", "((csc($))^2)"),
+  // new EquationBase("{{\\csc($)}{\\cot($)}}", "(csc($) * cot($))"),
 ];
 
 /**
@@ -263,10 +265,11 @@ export function inverseTrigFunction(inner: Equation = x()): Equation {
 }
 
 const nonTrigIntegrableFunctions: Equation[] = [
-  new EquationBase("e^{$}", "e^($)"),
+  new EquationBase("e^{$}", "E^($)"),
   new EquationBase("___^{$}", "___^($)"),
   new EquationBase("\\sqrt{$}", "sqrt($)"),
   new EquationBase("{$}^{___}", "($)^(___)"),
+  new EquationBase("\\ln{|$|}", "log(abs($))"),
 ];
 
 /**

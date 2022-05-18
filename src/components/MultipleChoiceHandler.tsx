@@ -9,11 +9,12 @@
 //======---------------------------------------------------------------======//
 
 import { shuffleInPlace } from "../util/array";
-import { MultipleChoiceQuestion } from "./MultipleChoiceQuestion";
+import { MultipleChoiceQuestion, SingleAnswer } from "./MultipleChoiceQuestion";
 
 interface MultipleChoiceState {
   question: MultipleChoiceQuestion;
   answers: JSX.Element[];
+  answersObject: SingleAnswer[];
   correctIndex: number;
 }
 
@@ -37,6 +38,10 @@ export class MultipleChoiceHandler {
   }
 
   public isCorrect(index: number): boolean {
+    if (index === -1) {
+      return false;
+    }
+
     return index === this.correctIndex();
   }
 
@@ -46,22 +51,24 @@ export class MultipleChoiceHandler {
     }
   }
 
+  public singleAnswerOfIndex(index: number): SingleAnswer {
+    return this.state.answersObject[index];
+  }
+
   private updateQuestionInternal(question: MultipleChoiceQuestion): MultipleChoiceState {
     // tag each answer with an ID, so we can both know which one is selected,
     // and so we can know which one is correct. the correct answer is always
     // the one with the largest tag
-    const correct = question.correct.asInlineAnswer();
-    const state = {
+    const state: MultipleChoiceState = {
       question: question,
-      answers: question.incorrect.map((answer) => answer.asInlineAnswer()),
+      answersObject: [...question.incorrect, question.correct],
+      answers: [],
       correctIndex: -1,
     };
 
-    state.answers.push(correct);
-
-    shuffleInPlace(state.answers);
-
-    state.correctIndex = state.answers.findIndex((elem) => elem === correct);
+    shuffleInPlace(state.answersObject);
+    state.answers = state.answersObject.map((answer) => answer.asInlineAnswer());
+    state.correctIndex = state.answersObject.findIndex((elem) => elem === question.correct);
 
     return state;
   }

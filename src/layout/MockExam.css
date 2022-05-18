@@ -8,11 +8,32 @@
 //                                                                           //
 //======---------------------------------------------------------------======*/
 
+.mock-fade-enter {
+    opacity: 0;
+}
+
+.mock-fade-exit {
+    opacity: 1;
+}
+
+.mock-fade-enter-active {
+    opacity: 1;
+}
+
+.mock-fade-exit-active {
+    opacity: 0;
+}
+
+.mock-fade-enter-active,
+.mock-fade-exit-active {
+    transition: opacity 150ms;
+}
+
 .correct {
     --correct-color: #60d394;
     background-color: var(--correct-color);
     border-color: var(--correct-color);
-    color: white;
+    color: black;
 }
 
 .incorrect {
@@ -24,10 +45,11 @@
 
 .input-grid {
     display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 50% 50%;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
     grid-column-gap: 20px;
     grid-row-gap: 20px;
     justify-items: stretch;
     align-items: stretch;
 }
+

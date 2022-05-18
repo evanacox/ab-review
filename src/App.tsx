@@ -12,7 +12,7 @@ import React from "react";
 import Nav, { Page } from "./layout/Nav";
 import Footer from "./layout/Footer";
 import Main from "./layout/Main";
-import { MultipleChoiceSet } from "./components/MultipleChoiceQuestion";
+import { MultipleChoiceSet, questionsFromJSON } from "./components/MultipleChoiceQuestion";
 
 interface AppState {
   questionSets: MultipleChoiceSet[];
@@ -23,10 +23,20 @@ export class App extends React.Component<{}, AppState> {
   public constructor(props: any) {
     super(props);
 
-    this.state = { questionSets: [], page: Page.Home };
+    this.state = { questionSets: [], page: Page.MockExam };
   }
 
   public render(): JSX.Element {
+    if (this.state.questionSets.length === 0) {
+      fetch(window.location.origin + "/ab-review/questions3.json")
+        .then((r) => r.text())
+        .then((text) => {
+          const questions = questionsFromJSON(text);
+
+          this.setState((state, props) => ({ questionSets: [new MultipleChoiceSet("", questions, text)] }));
+        });
+    }
+
     return (
       <div>
         <Nav

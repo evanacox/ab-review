@@ -8,31 +8,56 @@
 //                                                                           //
 //======---------------------------------------------------------------======//
 
-import {
-  constant,
-  differentiableTrigFunction,
-  elementaryIntegrableFunction,
-  Equation,
-  EquationBase,
-  integrableTrigFunction,
-  inverseTrigFunction,
-  monomial,
-  trigConstant,
-  x,
-} from "./equations";
+import { elementaryIntegrableFunction, Equation, EquationBase, monomial, sumDiffOfLength } from "./equations";
 import * as math from "mathjs";
-import { randomBoolWithChance } from "../util/random";
-import { intoLatex } from "./style";
+import { manipulatedEquationIntoLatex } from "./style";
+import { randomBoolWithChance, randomWithin } from "../util/random";
 
-export function uSubstitution(): Equation {
-  const eq = randomBoolWithChance(0.3)
-    ? integrableTrigFunction(monomial(x(), constant(), trigConstant()))
-    : elementaryIntegrableFunction(monomial());
+export interface IntegralProblem {
+  integrand: Equation;
+  correct: Equation;
+}
 
-  console.log(eq.asTextual());
+function integrandSimplify(eq: string): string {
+  return math.derivative(eq, "x", { simplify: false }).toString({ parentheses: "all" });
+}
 
-  const derivative = math.derivative(math.simplify(eq.asTextual()), "x", { simplify: false });
-  const unambiguous = derivative.toString({ parentheses: "all" });
+export function trivial(): IntegralProblem {
+  const fn = elementaryIntegrableFunction();
+  const unambiguous = integrandSimplify(fn.asTextual());
 
-  return new EquationBase(intoLatex(unambiguous), unambiguous);
+  return {
+    integrand: new EquationBase(manipulatedEquationIntoLatex(unambiguous), unambiguous),
+    correct: fn,
+  };
+}
+
+export function trivialSet(): IntegralProblem {
+  const fn = sumDiffOfLength(randomWithin(2, 4), elementaryIntegrableFunction);
+  const unambiguous = integrandSimplify(fn.asTextual());
+
+  return {
+    integrand: new EquationBase(manipulatedEquationIntoLatex(unambiguous), unambiguous),
+    correct: fn,
+  };
+}
+
+export function uSubstitution(): IntegralProblem {
+  const fn = elementaryIntegrableFunction(monomial());
+  const unambiguous = integrandSimplify(fn.asTextual());
+
+  return {
+    integrand: new EquationBase(manipulatedEquationIntoLatex(unambiguous), unambiguous),
+    correct: fn,
+  };
+}
+
+export function randomIntegral(): IntegralProblem {
+  if (randomBoolWithChance(0.3)) {
+    return uSubstitution();
+  } else if (randomBoolWithChance(0.3)) {
+    return trivialSet();
+  } else {
+    return trivial();
+  }
 }

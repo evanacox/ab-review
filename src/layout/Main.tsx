@@ -9,10 +9,11 @@
 //======---------------------------------------------------------------======//
 
 import React from "react";
-import { Provider, Node } from "@nteract/mathjax";
-import NormalMCQSet from "../layout/NormalMCQSet";
-import FastMCQSet from "./FastMCQSet";
-import "./Main.css";
+import { Node } from "@nteract/mathjax";
+import EquationInputQuestion, {
+  equationQuestionFromDerivative,
+  equationQuestionFromIntegral,
+} from "../components/EquationInputQuestion";
 import { MultipleChoiceSet } from "../components/MultipleChoiceQuestion";
 import { SwitchTransition, CSSTransition } from "react-transition-group";
 import { Page } from "./Nav";
@@ -26,56 +27,11 @@ import {
   monomial,
   sumDiffOfLength,
 } from "../functions/equations";
-import { uSubstitution } from "../functions/integration";
-
-const questions = [
-  {
-    prompt: (
-      <div>
-        Find <Node inline>{"f'(x)"}</Node> in simplest form.
-        <Node>{`f(x) = 2x^5 + \\frac{1}{\\sqrt{5e^6x}}`}</Node>
-      </div>
-    ),
-    incorrectAnswers: [
-      <Node inline>x^2 + y^2 = z^2</Node>,
-      <Node inline>{"\\int_0^1\\frac{sin(x)}{x}dx"}</Node>,
-      <Node inline>{"\\ln(x^2) + C"}</Node>,
-      <Node inline>{"42"}</Node>,
-    ],
-    correctAnswer: <Node inline>{"\\frac{-b\\pm\\sqrt{b^2 - 4ac}}{2a}"}</Node>,
-  },
-  {
-    prompt: (
-      <div>
-        Find <Node inline>{"\\int f'(x)dx"}</Node> in simplest form.
-        <Node>{`f(x) = 2x^5 + \\frac{1}{\\sqrt{5e^6x}}`}</Node>
-      </div>
-    ),
-    incorrectAnswers: [
-      <Node inline>{"f'(x) + C"}</Node>,
-      <Node inline>{"10x^4 - \\frac{3e^(-3x)}{\\sqrt{5}} + C"}</Node>,
-      <Node inline>{"6 + C"}</Node>,
-      <Node inline>{"idk lmao"}</Node>,
-    ],
-    correctAnswer: <Node inline>{"2x^5 + \\frac{1}{\\sqrt{5e^6x}} + C"}</Node>,
-  },
-  {
-    prompt: (
-      <div>
-        Find <Node inline>{"\\sqrt{4}"}</Node> in simplest form.
-        <br />
-        <br />
-      </div>
-    ),
-    incorrectAnswers: [
-      <Node inline>2</Node>,
-      <Node inline>{"\\pm2"}</Node>,
-      <Node inline>{"16"}</Node>,
-      <Node inline>{"64"}</Node>,
-    ],
-    correctAnswer: <Node inline>{"e^{e^{x}}"}</Node>,
-  },
-];
+import { IntegralProblem, randomIntegral, uSubstitution } from "../functions/integration";
+import "./Main.css";
+import { MockExam } from "./MockExam";
+import { runPython, runPythonAsync } from "../util/python";
+import { DerivativeProblem, randomDerivative } from "../functions/differentiation";
 
 interface MainProps {
   set: MultipleChoiceSet | null;
@@ -83,6 +39,8 @@ interface MainProps {
 }
 
 interface MainState {
+  currentIntegralProblem: IntegralProblem;
+  currentDerivativeProblem: DerivativeProblem;
   currentEquations: Equation[];
 }
 
@@ -90,7 +48,11 @@ export class Main extends React.Component<MainProps, MainState> {
   public constructor(props: MainProps) {
     super(props);
 
-    this.state = { currentEquations: [empty()] };
+    this.state = {
+      currentEquations: [empty()],
+      currentIntegralProblem: randomIntegral(),
+      currentDerivativeProblem: randomDerivative(),
+    };
   }
 
   public render(): JSX.Element {
@@ -122,18 +84,9 @@ export class Main extends React.Component<MainProps, MainState> {
               </article>
             </div>
             <button
-              onClick={() =>
-                this.setState((state, props) => ({
-                  currentEquations: [
-                    uSubstitution(),
-                    sumDiffOfLength(3, () => elementaryIntegrableFunction(monomial())),
-                    inverseTrigFunction(monomial()),
-                    differentiableTrigFunction(monomial()),
-                    integrableTrigFunction(monomial()),
-                    elementaryIntegrableFunction(monomial()),
-                  ],
-                }))
-              }
+              onClick={async () => {
+                console.log(runPython("sympy.latex(sympy.diff('sin(x)', 'x'))"));
+              }}
             >
               Next
             </button>
@@ -144,8 +97,10 @@ export class Main extends React.Component<MainProps, MainState> {
         return (
           <article>
             <h2>Mixed Integration Practice</h2>
-
-            <FastMCQSet questions={questions} onFinish={(info) => console.log("done! got info: ", info)} />
+            <EquationInputQuestion
+              question={equationQuestionFromIntegral(this.state.currentIntegralProblem)}
+              onSubmit={() => this.setState((_1, _2) => ({ currentIntegralProblem: randomIntegral() }))}
+            />
           </article>
         );
       }
@@ -153,17 +108,24 @@ export class Main extends React.Component<MainProps, MainState> {
         return (
           <article>
             <h2>Mixed Differentiation Practice</h2>
-            <FastMCQSet questions={questions} onFinish={(info) => console.log("done! got info: ", info)} />
+            <EquationInputQuestion
+              question={equationQuestionFromDerivative(this.state.currentDerivativeProblem)}
+              onSubmit={() => this.setState((_1, _2) => ({ currentDerivativeProblem: randomDerivative() }))}
+            />
           </article>
         );
       }
       case Page.MockExam: {
-        return (
-          <article>
-            <h2>Mock Exam</h2>
-            <NormalMCQSet questions={questions} onFinish={(info) => console.log("done! got info: ", info)} />
-          </article>
-        );
+        if (this.props.set === null) {
+          return (
+            <article>
+              <h2>Mock Exam</h2>
+              <p>You need to load a question set first! See the button on the top of the screen.</p>
+            </article>
+          );
+        }
+
+        return <MockExam set={this.props.set} />;
       }
     }
   }

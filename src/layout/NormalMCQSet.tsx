@@ -14,12 +14,17 @@ import { MCQSetProps, MCQSetState } from "./MCQSet";
 import NormalMCQuestion from "../components/NormalMCQuestion";
 import "./NormalMCQSet.css";
 import MultipleChoiceHandler from "../components/MultipleChoiceHandler";
+import { SingleAnswer } from "../components/MultipleChoiceQuestion";
 
 export class NormalMCQSet extends React.Component<MCQSetProps, MCQSetState> {
   public constructor(props: MCQSetProps) {
     super(props);
 
-    this.state = { questionIndex: 0, info: { answers: new Map<number, boolean>() }, needChange: false };
+    this.state = {
+      questionIndex: 0,
+      info: { answers: new Map<number, [boolean, SingleAnswer | null]>() },
+      needChange: false,
+    };
   }
 
   public render(): JSX.Element {
@@ -42,7 +47,10 @@ export class NormalMCQSet extends React.Component<MCQSetProps, MCQSetState> {
             classNames={"normal-fade"}
             addEndListener={() => this.onTransitionChange()}
           >
-            {inner}
+            <div>
+              <h4>Question #{this.state.questionIndex + 1}</h4>
+              {inner}
+            </div>
           </CSSTransition>
         </SwitchTransition>
       </div>
@@ -61,7 +69,7 @@ export class NormalMCQSet extends React.Component<MCQSetProps, MCQSetState> {
 
     if (this.state.questionIndex + 1 === this.props.questions.length) {
       this.props.onFinish(this.state.info);
-      super.setState((state, props) => ({ info: { answers: new Map<number, boolean>() } }));
+      super.setState((state, props) => ({ info: { answers: new Map<number, [boolean, SingleAnswer]>() } }));
     }
 
     return super.setState((state, props) => ({
@@ -71,7 +79,12 @@ export class NormalMCQSet extends React.Component<MCQSetProps, MCQSetState> {
 
   private onNext(handler: MultipleChoiceHandler, selectedIndex: number): void {
     super.setState((state, _) => {
-      state.info.answers.set(state.questionIndex, handler.isCorrect(selectedIndex));
+      state.info.answers.set(state.questionIndex, [
+        handler.isCorrect(selectedIndex),
+        selectedIndex === -1 ? null : handler.singleAnswerOfIndex(selectedIndex),
+      ]);
+
+      console.log(selectedIndex, state.info.answers.get(state.questionIndex));
 
       return {
         info: state.info,

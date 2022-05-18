@@ -8,28 +8,25 @@
 //                                                                           //
 //======---------------------------------------------------------------======//
 
-import React from "react";
-
-export interface FooterProps {
-  copyrightStartYear: number;
-  githubLink: string;
-  githubRepoName: string;
+export async function runPythonAsync(code: string): Promise<string> {
+  try {
+    // @ts-ignore
+    return window.pyodide.runPythonAsync("import sympy\n" + code);
+  } catch (e) {
+    return "";
+  }
 }
 
-export function Footer(props: FooterProps): JSX.Element {
-  const licenseLink = `${props.githubLink}/${props.githubRepoName}/blob/master/LICENSE`;
+export function runPython(code: string): string {
+  // @ts-ignore
+  if (window.pyodide === undefined) {
+    return "";
+  }
 
-  return (
-    <footer className={"container-fluid"}>
-      <small>
-        Distributed under the&nbsp;
-        <a href={licenseLink} className={"secondary"}>
-          BSD 3-Clause License
-        </a>
-        .
-      </small>
-    </footer>
-  );
+  try {
+    // @ts-ignore
+    return window.pyodide.runPython("import sympy\n" + code);
+  } catch (e) {
+    return "";
+  }
 }
-
-export default Footer;

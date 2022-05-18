@@ -1,0 +1,1003 @@
+[
+  {
+    "unit": 1,
+    "prompt": [
+      "`\\lim\\limits_{x \\to -4}{\\frac{x^{2}+5x+4}{x+4}} =`"
+    ],
+    "incorrectAnswers": [
+      "`0`",
+      "`3`",
+      "DNE"
+    ],
+    "correctAnswer": "`-3`"
+  },
+  {
+    "unit": 1,
+    "prompt": [
+      "`f(x)=\\begin{cases}x^2-kx+3 & x\\lt-3 \\\\ x+9 & x\\geq-3 \\\\ \\end{cases}`",
+      "Let `f(x)` be the piecewise function defined above. For what value of `k` is `f(x)` continuous at `x=-3`?"
+    ],
+    "incorrectAnswers": [
+      "`7`",
+      "`2`",
+      "`-7`"
+    ],
+    "correctAnswer": "`-2`"
+  },
+  {
+    "unit": 1,
+    "prompt": [
+      "`\\lim\\limits_{x \\to 2}{\\frac{27x-54}{x^{2}-2x}} =`."
+    ],
+    "incorrectAnswers": [
+      "`27`",
+      "`-\\frac{27}{2}`",
+      "DNE"
+    ],
+    "correctAnswer": "`\\frac{27}{2}`"
+  },
+  {
+    "unit": 1,
+    "prompt": [
+      "`f(x)=\\frac{\\left(x+4\\right)\\left(x-6\\right)}{\\left(x^{2}+5x+4\\right)\\left(x+6\\right)}`",
+      "How many removable and non-removable discontinuities does the graph of `f(x)` have?"
+    ],
+    "incorrectAnswers": [
+      "`2` removable discontinuities, `1` non-removable discontinuity",
+      "No removable or non-removable discontinuities",
+      "`0` removable discontinuities, `3` non-removable discontinuities"
+    ],
+    "correctAnswer": "`1` removable discontinuity, `2` non-removable discontinuities"
+  },
+  {
+    "unit": 1,
+    "prompt": [
+      "Given that `\\lim\\limits_{x \\to 8^{-}}{g(x)} = 8` and `\\lim\\limits_{x \\to 8^{+}}{g(x)} = 1`, which of the following must be true?"
+    ],
+    "incorrectAnswers": [
+      "`g(8) = 1`",
+      "`\\lim\\limits_{x \\to 8}{g(x)} = 8`",
+      "`g(1) = 8`"
+    ],
+    "correctAnswer": "`g(x)` is not continuous at `x=8`"
+  },
+  {
+    "unit": 1,
+    "prompt": [
+      "Let `f` be a function that is continuous on the closed interval `[4, 10]`. It is known that `f(4)=1` and `f(10)=-11`. Which of the following is guaranteed by the Intermediate Value Theorem?"
+    ],
+    "incorrectAnswers": [
+      "`f(x)=5` has at least one solution in the open interval `(4, 10)`",
+      "`f(7)=-5`",
+      "None of these."
+    ],
+    "correctAnswer": "`f(x)=-5` has at least one solution in the open interval `(4, 10)`"
+  },
+  {
+    "unit": 1,
+    "prompt": [
+      "`\\lim\\limits_{x \\to \\infty}{\\frac{x^{2}+5x+10}{x^{3}+2x^{2}+4x+2}} = `"
+    ],
+    "incorrectAnswers": [
+      "`1`",
+      "`\\frac{2}{3}`",
+      "`-\\frac{2}{3}`"
+    ],
+    "correctAnswer": "`0`"
+  },
+  {
+    "unit": 1,
+    "prompt": [
+      "`\\lim\\limits_{x \\to \\infty}{\\frac{4x^{2}-e^{x}}{x^{4}-5}} = `"
+    ],
+    "incorrectAnswers": [
+      "`\\infty`",
+      "`0`",
+      "`4`"
+    ],
+    "correctAnswer": "`-\\infty`"
+  },
+  {
+    "unit": 1,
+    "prompt": [
+      "`f\\left(x\\right)=\\frac{x^{2}+x-12}{x^{2}-12x+27}`",
+      "Given `f` defined above, find `\\lim\\limits_{x \\to 3}{f(x)}`."
+    ],
+    "incorrectAnswers": [
+      "`-\\frac{1}{12}`",
+      "DNE",
+      "`\\frac{7}{6}`"
+    ],
+    "correctAnswer": "`-\\frac{7}{6}`"
+  },
+  {
+    "unit": 1,
+    "prompt": [
+      "For which of the following does `\\lim\\limits_{x \\to 1}{f(x)}` not exist?",
+      "I. `f(x)=\\frac{15}{x^2 - 1}`",
+      "II. `f(x)=\\frac{x^{4}+3x^{2}-16x}{x^{5}+2x^{4}-3^{x}}`",
+      "III. `f(x)=x^{3}-x^{2}-x+1`"
+    ],
+    "incorrectAnswers": [
+      "I only",
+      "II only",
+      "I, II and III"
+    ],
+    "correctAnswer": "I and II"
+  },
+  {
+    "unit": 2,
+    "prompt": [
+      "`f\\left(x\\right)=\\frac{x^{3}+2x+3}{x^{2}+5}`",
+      "Given `f(x)`, what is `f'(x)`?"
+    ],
+    "incorrectAnswers": [
+      "`\\frac{-2x^{4}+3x^{2}-2x^{2}+9x+10}{x^{2}+5}`",
+      "`\\frac{-2x^{4}+3x^{2}-2x^{2}+9x+10}{2x}`",
+      "`\\frac{3x^{2}+2}{2x}`"
+    ],
+    "correctAnswer": "`\\frac{-2x^{4}+3x^{2}-2x^{2}+9x+10}{\\left(x^{2}+5\\right)^{2}}`"
+  },
+  {
+    "unit": 1,
+    "prompt": [
+      "It is known that `6 < k < 7`, where `k` is an integer. Which statement correctly identifies if `k` exists and why?"
+    ],
+    "incorrectAnswers": [
+      "nonexistent, because there are no integers in the open interval `(6, 7)`",
+      "nonexistent, because thrembo is not a real number",
+      "`6.5`, because `6 < 6.5 < 7`."
+    ],
+    "correctAnswer": "`Ϫ`, because `6 < Ϫ < 7` and because thrembo (`Ϫ`) is an integer."
+  },
+  {
+    "unit": 2,
+    "prompt": [
+      "If `f(x)=\\csc(x)+\\tan(x)`, find `f'(x)`."
+    ],
+    "incorrectAnswers": [
+      "`\\csc(x)\\cot(x)+\\sec(x)\\tan(x)`",
+      "`-\\csc(x)\\cot(x)+\\sec(x)\\tan(x)`",
+      "`\\csc(x)\\cot(x)+\\sec^{2}(x)`"
+    ],
+    "correctAnswer": "`-\\csc(x)\\cot(x)+\\sec^{2}(x)`"
+  },
+  {
+    "unit": 2,
+    "prompt": [
+      "Let `w` be the differentiable function defined by `w(x)=\\frac{h(x)}{s(x)}`.",
+      "",
+      "Given `h(2)=1`, `h'(2)=3`, `s(2)=2` and `s'(2)=4`, find `w'(2)`."
+    ],
+    "incorrectAnswers": [
+      "`0`",
+      "`1`",
+      "`-\\frac{1}{2}`"
+    ],
+    "correctAnswer": "`\\frac{1}{2}`"
+  },
+  {
+    "unit": 2,
+    "prompt": [
+      "`f(x)=\\begin{cases}x^2-kx+3 & x\\lt-3 \\\\ x+9 & x\\geq-3 \\\\ \\end{cases}`",
+      "Let `f` be the piecewise function defined above. Which of the following statements about `f` is true?"
+    ],
+    "incorrectAnswers": [
+      "`f` is neither continuous nor differentiable at `x=-4`",
+      "`f` is differentiable but not continuous at `x=-4`",
+      "`f` is continuous and differentiable at `x=-4`"
+    ],
+    "correctAnswer": "`f` is continuous but not differentiable at `x=-4`"
+  },
+  {
+    "unit": 2,
+    "prompt": [
+      "Given `f(x)=(\\cos(x))(x^{3}-2x^{2}-3)`, find `\\lim\\limits_{h \\to 0}{\\frac{f\\left(x+h\\right)-f\\left(x\\right)}{h}}`."
+    ],
+    "incorrectAnswers": [
+      "`(\\cos(x))(x^{3}-2x^{2}-3)`",
+      "`(-\\sin(x))(3x^{2}-4x)`",
+      "`-3`"
+    ],
+    "correctAnswer": "`(-\\sin(x))(x^{3}-2x^{2}-3)+(\\cos(x))(3x^{2}-4x)`"
+  },
+  {
+    "unit": 2,
+    "prompt": [
+      "`f(x)=10x^{3}-x^{2}+5x-5`",
+      "Given `f(x)`, what is the average rate of change of `f` on the closed interval `[0, 10]`?"
+    ],
+    "incorrectAnswers": [
+      "`1000`",
+      "`994.5`",
+      "`9950`"
+    ],
+    "correctAnswer": "`995`"
+  },
+  {
+    "unit": 2,
+    "prompt": [
+      "`\\lim\\limits_{x \\to 4}{\\frac{\\sin(x)-\\sin(4)}{x-4}} =`"
+    ],
+    "incorrectAnswers": [
+      "`\\cos(x)`",
+      "`0`",
+      "`\\sin(4)`"
+    ],
+    "correctAnswer": "`\\cos(4)`"
+  },
+  {
+    "unit": 2,
+    "prompt": [
+      "`\\frac{d}{dx}[4x^{3}6^{x}]=`"
+    ],
+    "incorrectAnswers": [
+      "`12x^{2}6^{x}`",
+      "`12x^{2}6^{x}+4x^{3}6^{x}`",
+      "`\\ln(6)12x^{2}6^{x}`"
+    ],
+    "correctAnswer": "`12x^{2}6^{x}+\\ln(6)4x^{3}6^{x}`"
+  },
+  {
+    "unit": 2,
+    "prompt": [
+      "`f(x)=\\frac{2x^{3}-x^2}{2x-3}`"
+    ],
+    "incorrectAnswers": [
+      "`3x^{2}-x`",
+      "`\\frac{6x^{2}-2x}{(2x-3)^{2}}`",
+      "`\\frac{\\left(2\\right)\\left(2x^{3}-x^{2}\\right)-\\left(2x-3\\right)\\left(6x^{2}-2x\\right)}{\\left(2x-3\\right)^{2}}`"
+    ],
+    "correctAnswer": "`\\frac{\\left(2x-3\\right)\\left(6x^{2}-2x\\right)-\\left(2\\right)\\left(2x^{3}-x^{2}\\right)}{\\left(2x-3\\right)^{2}}`"
+  },
+  {
+    "unit": 3,
+    "prompt": [
+      "`\\frac{d}{dx}\\left[\\sin^{2}\\left(2x^{2}\\right)\\right]=`"
+    ],
+    "incorrectAnswers": [
+      "`-8x\\sin(2x^{2})\\cos(2x^{2})`",
+      "`-2\\sin(2x^{2})\\cos(2x^{2})`",
+      "`2\\sin(2x^{2})\\cos(2x^{2})`"
+    ],
+    "correctAnswer": "`8x\\sin(2x^{2})\\cos(2x^{2})`"
+  },
+  {
+    "unit": 3,
+    "prompt": [
+      "Consider the curve defined by `xy-3x=2y+6xy`. What is the slope at the line tangent to the curve at the point `(3, 1)`?"
+    ],
+    "incorrectAnswers": [
+      "`26`",
+      "`\\frac{8}{17}`",
+      "`25`"
+    ],
+    "correctAnswer": "`-\\frac{8}{17}`"
+  },
+  {
+    "unit": 3,
+    "prompt": [
+      "`\\frac{d}{dx}\\left[\\arctan\\left(4x^{2}\\right)\\right]=`"
+    ],
+    "incorrectAnswers": [
+      "`-\\frac{1}{1+x^{2}}`",
+      "`\\frac{1}{1+x^{2}}`",
+      "`-\\frac{8x^{2}}{1+x^{2}}`"
+    ],
+    "correctAnswer": "`\\frac{8x}{1+x^{2}}`"
+  },
+  {
+    "unit": 3,
+    "prompt": [
+      "`f(x)=e^{4x}+x^{4}+x^{3}+2x+5`",
+      "Given `f`, then `f^{(35)}(x) =`"
+    ],
+    "incorrectAnswers": [
+      "`4e^{4x}+4x^{3}+3x^{2}+2`",
+      "`4^{34}e^{4x}`",
+      "`e^{4x}`"
+    ],
+    "correctAnswer": "`4^{35}e^{4x}`"
+  },
+  {
+    "unit": 3,
+    "prompt": [
+      "`y=\\sin(x)`",
+      "What is the equation of the line tangent to the graph of `y` at `x=0`?"
+    ],
+    "incorrectAnswers": [
+      "`y=0`",
+      "`y-1=x`",
+      "`y=1`"
+    ],
+    "correctAnswer": "`y=x`"
+  },
+  {
+    "unit": 3,
+    "prompt": [
+      "If `g` is a differentiable function and `f(x)=g(7x^{3})`, what is `f'(x)`?"
+    ],
+    "incorrectAnswers": [
+      "`7x^{3}g'(7x^{3})`",
+      "`g'(7x^{3})`",
+      "`g'(21x^{2})`"
+    ],
+    "correctAnswer": "`21x^{2}g'(7x^{3})`"
+  },
+  {
+    "unit": 3,
+    "prompt": [
+      "Let `f` and `g` be differentiable functions. It is known that `g` is the inverse of `f`.",
+      "If `g(5)=2` and `f'(2)=-6`, then `g'(5)=`"
+    ],
+    "incorrectAnswers": [
+      "`-\\frac{1}{2}`",
+      "`\\frac{1}{2}`",
+      "`\\frac{1}{6}`"
+    ],
+    "correctAnswer": "`-\\frac{1}{6}`"
+  },
+  {
+    "unit": 3,
+    "prompt": [
+      "`f(x)=\\ln(\\sin(\\frac{\\pi}{2}x))`",
+      "Given `f`, find `f'`."
+    ],
+    "incorrectAnswers": [
+      "`\\frac{1}{(\\cos(\\frac{\\pi}{2}x))}`",
+      "`\\frac{\\pi x}{2\\sin\\left(\\frac{\\pi}{2}x\\right)}`",
+      "`\\ln\\left(\\cos\\left(\\frac{\\pi}{2}x\\right)\\right)`"
+    ],
+    "correctAnswer": "`\\frac{\\pi\\cos\\left(\\frac{\\pi}{2}x\\right)}{2\\sin\\left(\\frac{\\pi}{2}x\\right)}`"
+  },
+  {
+    "unit": 3,
+    "prompt": [
+      "Given `tan(y)=2x^{2}`, find `\\frac{dy}{dx}`"
+    ],
+    "incorrectAnswers": [
+      "`\\frac{1}{\\sec^{2}\\left(y\\right)}`",
+      "`\\frac{2x^{2}}{\\sec^{2}\\left(y\\right)}`",
+      "`\\frac{4x}{\\tan\\left(y\\right)}`"
+    ],
+    "correctAnswer": "`\\frac{4x}{\\sec^{2}\\left(y\\right)}`"
+  },
+  {
+    "unit": 3,
+    "prompt": [
+      "Let `f` and `g` be differentiable functions such that `f(g(x))=x` for all values of `x`. Find `g'`."
+    ],
+    "incorrectAnswers": [
+      "`0`",
+      "`f'\\left(g\\left(x\\right)\\right)`",
+      "`\\frac{1}{f\\left(g\\left(x\\right)\\right)}`"
+    ],
+    "correctAnswer": "`\\frac{1}{f'\\left(g\\left(x\\right)\\right)}`"
+  },
+  {
+    "unit": 4,
+    "prompt": [
+      "The amount of liquid nitrogen in a tank after `t` days is modeled by the function `L(t)`, where `L(t)` is measured in milliliters. Which is the best interpretation of `L''(3)=-9`?"
+    ],
+    "incorrectAnswers": [
+      "The amount of liquid nitrogen in the container decreased by `9`mL from time `t=0` days to time `t=3` days.",
+      "The amount of liquid nitrogen in the container is decreasing at a rate of `9` mL per day at time `t=3` days.",
+      "The average rate of change of the amount of liquid nitrogen in the container is `-9` mL at time `t=3` days."
+    ],
+    "correctAnswer": "The rate of change of the amount of liquid nitrogen in the container is decreasing at a rate of `9` mL per day per day at time `t=3` days."
+  },
+  {
+    "unit": 4,
+    "prompt": [
+      "Calculator Allowed.",
+      "",
+      "If `c(t)=4\\sin(t^{2})+1000` represents the number of cactus in a desert after `t` weeks, how many cactus are in the desert after `97` days (to the nearest whole number)?"
+    ],
+    "incorrectAnswers": [
+      "`14` cactus",
+      "`1000` cactus",
+      "`998` cactus"
+    ],
+    "correctAnswer": "`999` cactus"
+  },
+  {
+    "unit": 4,
+    "prompt": [
+      "The differentiable function `A(t)` represents the rate at which apples are being picked off of the trees in an apple orchard. Which of the following statements would justify that the rate at which the apples are being picked is decreasing?"
+    ],
+    "incorrectAnswers": [
+      "`A(t) > 0`",
+      "`A'(t) > 0`",
+      "`A(t) < 0`"
+    ],
+    "correctAnswer": "`A'(t) < 0`"
+  },
+  {
+    "unit": 4,
+    "prompt": [
+      "Let `M(t)`, a differentiable function, represent the rate at which mercury is being poured into a vile in milliliters(mL) after `t` seconds and `S(t)`, a differentiable function, represents the rate at which the mercury is being pumped out of the vile into a tube in mililiters after `t` seconds. Which of the following would represent that the rate of change of the amount of mercury in the vile is increasing at `t` = 4 seconds?"
+    ],
+    "incorrectAnswers": [
+      "`M(4) > 0`",
+      "`M'(4) > 0`",
+      "`M'(4) - S'(4) > 0`"
+    ],
+    "correctAnswer": "`M(4) - S(4) > 0`"
+  },
+  {
+    "unit": 4,
+    "prompt": [
+      "The radius of a circle is increasing at a constant rate of 4 centimeters(cm) per minute. What is the rate of change of the area of the circle, in square centimeters per minute, at the instant that the radius `r` = 16 centimeters?"
+    ],
+    "incorrectAnswers": [
+      "`256\\pi`",
+      "`64\\pi`",
+      "`32\\pi`"
+    ],
+    "correctAnswer": "`128\\pi`"
+  },
+  {
+    "unit": 4,
+    "prompt": [
+      "Let `g\\left(x\\right)=\\ln\\left(\\cos\\left(x^{2}\\right)\\right)\\ +\\ 3x`. If the line tangent to the graph at `x=4.25` is used to estimate `g(3.75)`, what is that estimate? Round your answer to the nearest thousanth."
+    ],
+    "incorrectAnswers": [
+      "`11.529`",
+      "`12.402`",
+      "`8.654`"
+    ],
+    "correctAnswer": "`6.637`"
+  },
+  {
+    "unit": 4,
+    "prompt": [
+      "If you only have to use L'Hospitals rule once to evaluate `\\lim\\limits_{x \\to 1} \\frac{g\\left(x\\right)}{f\\left(x\\right)}`, which of the following must be false?"
+    ],
+    "incorrectAnswers": [
+      "`f'\\left(1\\right)=0`",
+      "`\\lim\\limits_{x \\to 1} g'\\left(x\\right)=0`",
+      "`g'\\left(1\\right)=0`"
+    ],
+    "correctAnswer": "`\\lim\\limits_{x \\to 1} f'\\left(x\\right)=0`"
+  },
+  {
+    "unit": 4,
+    "prompt": [
+      "The position of a particle moving along the `y`-axis is given by `y(t)=\\cos(\\frac{\\pi}{2}t)`. Find the acceleration of the particle at time `t=\\2`."
+    ],
+    "incorrectAnswers": [
+      "`0`",
+      "`\\pi`",
+      "`-1`"
+    ],
+    "correctAnswer": "`1`"
+  },
+  {
+    "unit": 4,
+    "prompt": [
+      "The position of a particle moving along the `x`-axis is given by `x(t)=e^{\\sin(2t)}`. Find an equation that models the speed of the particle in terms of `t`."
+    ],
+    "incorrectAnswers": [
+      "`e^{2cos(2t)}`",
+      "`|e^{sin(2t}|`",
+      "`2\\cos\\left(2t\\right)e^{\\sin\\left(2t\\right)}`"
+    ],
+    "correctAnswer": "`|2\\cos\\left(2t\\right)e^{\\sin\\left(2t\\right)}|`"
+  },
+  {
+    "unit": 5,
+    "prompt": [
+      "What is the absolute minimum value of `y=\\frac{4}{3}x^{3}-8x^{2}+15x` on `1\\le x\\le3`?"
+    ],
+    "incorrectAnswers": [
+      "`0`",
+      "`9`",
+      "`\\frac{52}{3}`"
+    ],
+    "correctAnswer": "`\\frac{25}{3}`"
+  },
+  {
+    "unit": 5,
+    "prompt": [
+      "What is the absolute maximum value of `y=8\\sqrt{2x}-x^{3}` on `1\\le x\\le6`?"
+    ],
+    "incorrectAnswers": [
+      "`-188.287`",
+      "`0`",
+      "`10.314`"
+    ],
+    "correctAnswer": "`10.703`"
+  },
+  {
+    "unit": 5,
+    "prompt": [
+      "If `f\\left(x\\right)=2x^{3}-12x^{2}+8`, at what value does the graph of f have a point of inflection?"
+    ],
+    "incorrectAnswers": [
+      "`x=4`",
+      "`x=3`",
+      "`x=0`"
+    ],
+    "correctAnswer": "`x=2`"
+  },
+  {
+    "unit": 5,
+    "prompt": [
+      "The sum of the height and radius of a right circular cylinder is 12 inches. What is the maximum volume of this cylinder? The volume of a cylinder is `V=\\pi r^{2}h`."
+    ],
+    "incorrectAnswers": [
+      "`128\\pi`",
+      "`64\\pi`",
+      "`512\\pi`"
+    ],
+    "correctAnswer": "`256\\pi`"
+  },
+  {
+    "unit": 5,
+    "prompt": [
+      "Let `f` be the function defined as `f\\left(x\\right)=2x^{2}-4x`. What is the value `c` on `(1,6)` that satisfies the conclusion of the Mean Value Theorem of `f` on the closed interval `[1,6]`."
+    ],
+    "incorrectAnswers": [
+      "`12`",
+      "`8`",
+      "`9.5`"
+    ],
+    "correctAnswer": "`10`"
+  },
+  {
+    "unit": 5,
+    "prompt": [
+      "Let `g(x)` be a continuous and always decreasing function on the domain `[a,b]`. Which of the following statements about `g(x)` is false?"
+    ],
+    "incorrectAnswers": [
+      "`g(x)` has a minimum value on `[a,b]`",
+      "`g(x)` has a maximum value on `[a,b]`",
+      "`g'(x)<0` for some `x` on `[a,b]`"
+    ],
+    "correctAnswer": "`g(x)>0` for some `x` on `[a, b]`"
+  },
+  {
+    "unit": 5,
+    "prompt": [
+      "If `f\\left(x\\right)=\\ln\\left(x^{3}+5x^{2}+5\\right)` then for what value of `x` does the graph of `f(x)` have a relative minimum?"
+    ],
+    "incorrectAnswers": [
+      "`-4`",
+      "`2`",
+      "`-2`"
+    ],
+    "correctAnswer": "`0`"
+  },
+  {
+    "unit": 5,
+    "prompt": [
+      "If `g(x)` is a differentiable function for all `x` and has a relative maximum at `x=a`, which of the following must be true about `g(x)`?"
+    ],
+    "incorrectAnswers": [
+      "`g(x)` changes from postive to negative at `x=a`.",
+      "`g'(x)` changes from increasing to decreasing at `x=a`.",
+      "`f'(a)>0`"
+    ],
+    "correctAnswer": "`g'(x)` changes from positive to negative at `x=a`."
+  },
+  {
+    "unit": 5,
+    "prompt": [
+      "Let `g(x)` be a differentiable function. If `g'(a)=0` then which of the following values of `g''(a)` guarentees that `x=a` is a relative minimum of `g(x)` using the Second Derivative Test?"
+    ],
+    "incorrectAnswers": [
+      "`f''(a)=-6`",
+      "`f''(a)=-3`",
+      "`f''(a)=0`"
+    ],
+    "correctAnswer": "`f''(a)=3`"
+  },
+  {
+    "unit": 5,
+    "prompt": [
+      "Let `f(x)` be a continuous and always decreasing function on the domain `[a, b]`. Which of the following about `f(x)` must be false?"
+    ],
+    "incorrectAnswers": [
+      "`f(x)` attains a maximum value on `[a, b]`",
+      "`f'(x)` is always decreasing on `[a, b]`",
+      "`f(x)` attains a minimum value on `[a, b]`"
+    ],
+    "correctAnswer": "`f(x)` has a critical point on `[a, b]`."
+  },
+  {
+    "unit": 5,
+    "prompt": [
+      "Consider the function `f\\left(x\\right)=e^{\\left(2x^{2}+4x\\right)}`. For which value of `x` does `f` have a relative minimum?"
+    ],
+    "incorrectAnswers": [
+      "`1`",
+      "`0`",
+      "`-2`"
+    ],
+    "correctAnswer": "`-1`"
+  },
+  {
+    "unit": 5,
+    "prompt": [
+      "Calculator Allowed.",
+      "`f(x)=x^{3}+x^{2}-12x+1`",
+      "Find the absolute maximum value of `f` on the interval `[-4, 4]`."
+    ],
+    "incorrectAnswers": [
+      "`21.745`",
+      "`1`",
+      "`-11.597`"
+    ],
+    "correctAnswer": "`33`"
+  },
+  {
+    "unit": 5,
+    "prompt": [
+      "Consider the curve `y^{2}+1=xy-3`. At which of the following `x` values does the curve have a vertical tangent?"
+    ],
+    "incorrectAnswers": [
+      "`-1`",
+      "`0`",
+      "`4`"
+    ],
+    "correctAnswer": "`-2`"
+  },
+  {
+    "unit": 6,
+    "prompt": [
+      "`\\int_{ }^{ }\\cos\\left(5x\\right)dx`"
+    ],
+    "incorrectAnswers": [
+      "`-\\frac{1}{5}\\sin\\left(5x\\right)+C`",
+      "`\\sin\\left(5x\\right)+C`",
+      "`-\\sin\\left(5x\\right)+C`"
+    ],
+    "correctAnswer": "`\\frac{1}{5}\\sin\\left(5x\\right)+C`"
+  },
+  {
+    "unit": 6,
+    "prompt": [
+      "Let `g` be a twice-differentiable function that is decreasing and concave up on its entire domain. If a finite number of subdivisions are used on the interval [`a`,`b`], which of these estimates is an over approximation of the true value of `\\int_{a}^{b}g\\left(x\\right)dx`?",
+      "",
+      "I. Trapezoidal Sum",
+      "II. Right Riemann Sum",
+      "III. Left Riemann Sum"
+    ],
+    "incorrectAnswers": [
+      "I only",
+      "II only",
+      "I, II, and III"
+    ],
+    "correctAnswer": "I and III"
+  },
+  {
+    "unit": 6,
+    "prompt": [
+      "Let `f` be a differentiable function. If `f\\left(x\\right)=\\int_{0}^{x}\\left[\\sin\\left(t-32\\right)+2t\\right]dt` then `f'(x)` is "
+    ],
+    "incorrectAnswers": [
+      "`\\sin\\left(x-32\\right)+2`",
+      "`\\cos\\left(x-32\\right)+2`",
+      "`-\\cos\\left(x-32\\right)+2x`"
+    ],
+    "correctAnswer": "`\\sin\\left(x-32\\right)+2x`"
+  },
+  {
+    "unit": 6,
+    "prompt": [
+      "Let `g` be a differentiable function defined as `f\\left(x\\right)=\\int_{0}^{3x^{2}}\\left[t^{2}-t\\right]dt` then `f'(1)` is "
+    ],
+    "incorrectAnswers": [
+      "`18`",
+      "`54`",
+      "`0`"
+    ],
+    "correctAnswer": "`36`"
+  },
+  {
+    "unit": 6,
+    "prompt": [
+      "Let `g` be a differentiable function defined as `f\\left(x\\right)=\\int_{3}^{x}-t^{5}dt`, on what interval is the graph of `f(x)` decreasing?"
+    ],
+    "incorrectAnswers": [
+      "`(-\\infty,0]`",
+      "`(-\\infty,\\infty)`",
+      "The graph of `f(x)` is never decreasing."
+    ],
+    "correctAnswer": "`[0,\\infty)`"
+  },
+  {
+    "unit": 6,
+    "prompt": [
+      "If `\\int_{6}^{3}f\\left(x\\right)dx=3` and `\\int_{6}^{9}f\\left(x\\right)dx=3`, then what is the value of `\\int_{3}^{9}f\\left(x\\right)dx`?"
+    ],
+    "incorrectAnswers": [
+      "`3`",
+      "`-3`",
+      "`6`"
+    ],
+    "correctAnswer": "`0`"
+  },
+  {
+    "unit": 6,
+    "prompt": [
+      "`\\int_{1}^{5}\\frac{2}{3x+1}dx=`"
+    ],
+    "incorrectAnswers": [
+      "`-\\frac{1}{8}`",
+      "`-\\frac{7}{30}`",
+      "`\\ln16-\\ln4`"
+    ],
+    "correctAnswer": "`\\frac{2}{3}\\left[\\ln16-\\ln4\\right]`"
+  },
+  {
+    "unit": 6,
+    "prompt": [
+      "`\\int_{0}^{\\frac{\\pi}{4}}\\left(\\sec^{2}x\\right)\\left(\\tan x\\right)dx=`"
+    ],
+    "incorrectAnswers": [
+      "`-1`",
+      "`0`",
+      "`1`"
+    ],
+    "correctAnswer": "`\\frac{1}{2}`"
+  },
+  {
+    "unit": 6,
+    "prompt": [
+      "`\\int_{ }^{ }e^{3x}dx=`"
+    ],
+    "incorrectAnswers": [
+      "`e^{3}+C`",
+      "`3e^{3x}+C`",
+      "`\\frac{1}{3}e^{3x}+C`"
+    ],
+    "correctAnswer": "`e^{3x}+C`"
+  },
+  {
+    "unit": 6,
+    "prompt": [
+      "`\\int_{ }^{ }\\frac{1}{-x^{2}+6x-10}dx=`"
+    ],
+    "incorrectAnswers": [
+      "`\\ln\\left|-x^{2}+6x-10\\right|+C`",
+      "`\\tan^{-1}\\left(x-3\\right)+C`",
+      "`-\\tan^{-1}\\left(x+3\\right)+C`"
+    ],
+    "correctAnswer": "`-\\tan^{-1}\\left(x-3\\right)+C`"
+  },
+  {
+    "unit": 6,
+    "prompt": [
+      "`f\\left(x\\right)=\\int_{x}^{-2}t^{2}dt`",
+      "Find `f(4)`."
+    ],
+    "incorrectAnswers": [
+      "`\\frac{64}{3}`",
+      "`24`",
+      "`-\\frac{64}{3}`"
+    ],
+    "correctAnswer": "`-24`"
+  },
+  {
+    "unit": 6,
+    "prompt": [
+      "`g\\left(x\\right)=\\int_{x}^{2}\\left(t^{3}-4t\\right)dt`",
+      "Consider the twice-differentiable function `g`. What is `g''`?"
+    ],
+    "incorrectAnswers": [
+      "`4t-t^{3}`",
+      "`-6t`",
+      "`3t^{2}-4`"
+    ],
+    "correctAnswer": "`4-3t^{2}`"
+  },
+  {
+    "unit": 6,
+    "prompt": [
+      "`\\lim\\limits_{n \\to \\infty}{\\sum_{k=1}^{n}\\left(3\\left(3+\\frac{3k}{n}\\right)^{3}\\right)\\left(\\frac{3}{n}\\right)}`",
+      "Consider the limit above. Which of the following expressions is equivalent to the limit?"
+    ],
+    "incorrectAnswers": [
+      "`\\int_{0}^{3}3\\left(x\\right)^{3}dx`",
+      "`\\int_{3}^{6}\\left(x\\right)^{3}dx`",
+      "`\\int_{6}^{9}\\left(x\\right)^{3}dx`"
+    ],
+    "correctAnswer": "`\\int_{3}^{6}3\\left(x\\right)^3dx`"
+  },
+  {
+    "unit": 7,
+    "prompt": [
+      "The rate of change of the volume `V` with respect to time `t` of water leaking from a container is proportional to the cube of the volume. Which of the following is a differential equation that could describe this relationship?"
+    ],
+    "incorrectAnswers": [
+      "`\\frac{dV}{dt}=-5t^{3}`",
+      "`\\frac{dV}{dt}=2V^{3}`",
+      "`\\frac{dV}{dt}=0.3t^{3}`"
+    ],
+    "correctAnswer": "`\\frac{dV}{dt}=-3V^{3}`"
+  },
+  {
+    "unit": 7,
+    "prompt": [
+      "Which of the following is a solution to the differential equation `xy'-3y=6`?"
+    ],
+    "incorrectAnswers": [
+      "`y=x^{2}+2`",
+      "`y=7x^{3}+2`",
+      "`y=3x^{2}-2`"
+    ],
+    "correctAnswer": "`y=5x^{2}-2`"
+  },
+  {
+    "unit": 7,
+    "prompt": [
+      "Of the following, which are solutions to the differentiable equation `4y+y''=0`?",
+      "I. `y=e^{2x}`",
+      "II. `y=3\\sin\\left(2x\\right)`",
+      "III. `y=5\\cos\\left(2x\\right)`"
+    ],
+    "incorrectAnswers": [
+      "I only",
+      "II only",
+      "III only"
+    ],
+    "correctAnswer": "II and III only"
+  },
+  {
+    "unit": 7,
+    "prompt": [
+      "What is the general solution to the differential equation `\\frac{dy}{dx}=\\frac{\\cos\\left(8x\\right)}{\\cos\\left(4y\\right)}`?"
+    ],
+    "incorrectAnswers": [
+      "`\\sin\\left(4y\\right)-\\sin\\left(8x\\right)=C`",
+      "`2\\tan\\left(4y\\right)-\\sin\\left(8x\\right)=C`",
+      "`\\sin\\left(4y\\right)-2\\sin\\left(8x\\right)=C`"
+    ],
+    "correctAnswer": "`2\\sin\\left(4y\\right)-\\sin\\left(8x\\right)=C`"
+  },
+  {
+    "unit": 7,
+    "prompt": [
+      "Let `y=f(x)` be the particular solution to the differentiable equation `\\frac{dy}{dx}=\\frac{2x-1}{y^{2}}` with the initial condition `y(0)=3`. Which of the following is an expression for `f(x)`?"
+    ],
+    "incorrectAnswers": [
+      "`\\frac{-3}{3x^{2}-3x-1}`",
+      "`\\sqrt{x^{2}-x+9}`",
+      "`\\left(3x^{2}-3x\\right)^{\\frac{1}{3}}+3`"
+    ],
+    "correctAnswer": "`\\left(3x^{2}-3x+27\\right)^{\\frac{1}{3}}`"
+  },
+  {
+    "unit": 7,
+    "prompt": [
+      "The amount of bacteria in a petri dish increases at a rate proportional to the amount present. At time `t=0`, the amount of bacteria in the fish is `10` grams. At time `t=2`, the amount of bacteria in the dish is `30` grams. What is the amount of bacterica in the dish at time `t=6`?"
+    ],
+    "incorrectAnswers": [
+      "`9270` grams",
+      "`190` grams",
+      "`70` grams"
+    ],
+    "correctAnswer": "`270` grams"
+  },
+  {
+    "unit": 7,
+    "prompt": [
+      "Which of the following is a solution to the differential equation `4y-y''=0`?"
+    ],
+    "incorrectAnswers": [
+      "`e^{4x}`",
+      "`\\sin(\\frac{\\pi}{2}x)`",
+      "`\\cos(2x)`"
+    ],
+    "correctAnswer": "`e^{2x}`"
+  },
+  {
+    "unit": 7,
+    "prompt": [
+      "Which of the following is a solution to the differential equation `4y-y''=0`?"
+    ],
+    "incorrectAnswers": [
+      "`e^{4x}`",
+      "`\\sin(\\frac{\\pi}{2}x)`",
+      "`\\cos(2x)`"
+    ],
+    "correctAnswer": "`e^{2x}`"
+  },
+  {
+    "unit": 8,
+    "prompt": [
+      "What is the average value of `f\\left(x\\right)=x^{3}-x^{2}+2x-3` over the interval `[0,3]`?"
+    ],
+    "incorrectAnswers": [
+      "`\\frac{117}{12}`",
+      "`-\\frac{117}{4}`",
+      "`\\frac{117}{4}`"
+    ],
+    "correctAnswer": "`-\\frac{117}{12}`"
+  },
+  {
+    "unit": 8,
+    "prompt": [
+      "Let `f` be the function given by `f\\left(x\\right)=3x\\sin x`. What is the average value of `f` on the closed interval `1\\le x\\le7`?"
+    ],
+    "incorrectAnswers": [
+      "`-14.764`",
+      "`8.161`",
+      "`1.879`"
+    ],
+    "correctAnswer": "`-2.461`"
+  },
+  {
+    "unit": 8,
+    "prompt": [
+      "What is the area of the region in the first quadrant bounded on the left by the graph of `x=y^{4}+y^{2}` and on the right by the graph of `x=5y`?"
+    ],
+    "incorrectAnswers": [
+      "`5293.155`",
+      "`8.508`",
+      "`5005.880`"
+    ],
+    "correctAnswer": "`2.983`"
+  },
+  {
+    "unit": 8,
+    "prompt": [
+      "A particle moves along a straight line with time `t\\ge0` and the acceleration of the particle is given by the differentiable function `a\\left(t\\right)=3t` what is the average acceleration of the particle from `t=0` to `t=4`?"
+    ],
+    "incorrectAnswers": [
+      "`0`",
+      "`12`",
+      "`24`"
+    ],
+    "correctAnswer": "`6`"
+  },
+  {
+    "unit": 8,
+    "prompt": [
+      "Let `M` be the region bounded by the graphs of `y=2x` and `y=x^{2}`. What is the area of `M`?"
+    ],
+    "incorrectAnswers": [
+      "`\\int_{0}^{2}\\left[x^{2}-2x\\right]dx`",
+      "`\\frac{1}{2}\\int_{0}^{2}\\left[x^{2}-2x\\right]dx`",
+      "`-\\frac{1}{2}\\int_{0}^{2}\\left[2x-x^{2}\\right]dx`"
+    ],
+    "correctAnswer": "`\\int_{0}^{2}\\left[2x-x^{2}\\right]dx`"
+  },
+  {
+    "unit": 8,
+    "prompt": [
+      "A region `R` is the base of a solid where `g\\left(x\\right)\\ge f\\left(x\\right)` for all `x`, `a\\le x\\le b`. For this solid, each cross section perpendicular to the `x`-axis are rectangles with height `5` times the base. Which of the following integrals gives the volume of this solid?"
+    ],
+    "incorrectAnswers": [
+      "`25\\int_{a}^{b}\\left[g\\left(x\\right)-f\\left(x\\right)\\right]^{2}dx`",
+      "`5\\int_{a}^{b}\\left[g\\left(x\\right)-f\\left(x\\right)\\right]dx`",
+      "`\\int_{a}^{b}\\left[g\\left(x\\right)-f\\left(x\\right)\\right]^{2}dx`"
+    ],
+    "correctAnswer": "`5\\int_{a}^{b}\\left[g\\left(x\\right)-f\\left(x\\right)\\right]^{2}dx`"
+  },
+  {
+    "unit": 8,
+    "prompt": [
+      "A region `R`, enclosed by `y=\\sqrt{x}`, the x-axis, and the vertical line `x=4`, is revolved about the `x`-axis. What is the volume of the solid?"
+    ],
+    "incorrectAnswers": [
+      "`4`",
+      "`8`",
+      "`4\\pi`"
+    ],
+    "correctAnswer": "`8\\pi`"
+  },
+  {
+    "unit": 8,
+    "prompt": [
+      "A region `R`, enclosed by `y=x^{2}+1`, the horizontal line `y=1` and the vertical line `x=2`, is revolved about the `y`-axis. Which integral expressive would give the volume of the solid?"
+    ],
+    "incorrectAnswers": [
+      "`\\pi\\int_{0}^{2}\\left[\\left(2\\right)^{2}-\\left(x^{2}+1\\right)^{2}\\right]dx`",
+      "`\\pi\\int_{0}^{2}\\left[\\left(x^{2}+1\\right)^{2}-\\left(2\\right)^{2}\\right]dx`",
+      "`\\pi\\int_{1}^{5}\\left[\\left(\\sqrt{y-1}\\right)^{2}-\\left(2\\right)^{2}\\right]dy`"
+    ],
+    "correctAnswer": "`\\pi\\int_{1}^{5}\\left[\\left(2\\right)^{2}-\\left(\\sqrt{y-1}\\right)^{2}\\right]dy`"
+  }
+]

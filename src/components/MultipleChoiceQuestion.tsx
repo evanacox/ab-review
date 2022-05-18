@@ -12,6 +12,7 @@ import React from "react";
 import { Node } from "@nteract/mathjax";
 import { Question, Convert } from "../util/questions.generated";
 import Algebrite from "algebrite";
+import { IntegralProblem } from "../functions/integration";
 
 export interface SingleAnswer {
   asInlineAnswer(): JSX.Element;
@@ -68,11 +69,13 @@ export class JSXAnswer implements SingleAnswer {
 }
 
 export class MultipleChoiceQuestion {
+  public readonly unit: number;
   public readonly prompt: JSX.Element;
   public readonly incorrect: SingleAnswer[];
   public readonly correct: SingleAnswer;
 
-  public constructor(prompt: JSX.Element, incorrect: SingleAnswer[], correct: SingleAnswer) {
+  public constructor(unit: number, prompt: JSX.Element, incorrect: SingleAnswer[], correct: SingleAnswer) {
+    this.unit = unit;
     this.prompt = prompt;
     this.incorrect = incorrect;
     this.correct = correct;
@@ -161,6 +164,7 @@ function parsePrompt(prompt: string[]): JSX.Element {
 
   for (const part of prompt) {
     promptParts.push(parseSingleAnswer(part).asExplanation());
+    promptParts.push(<br />);
   }
 
   return <div>{promptParts}</div>;
@@ -180,11 +184,7 @@ function parseSingleAnswer(answer: string): SingleAnswer {
 
     // some stuff may or may not be understandable by Nerdamer (e.g `f(g'(x))`), if it
     // isn't we just fall back to trying it as LaTeX
-    try {
-      return new EquationAnswer(Algebrite.printlatex(elem));
-    } catch (_) {
-      return new EquationAnswer(elem);
-    }
+    return new EquationAnswer(elem);
   }
 
   if (answer[0] === "{" && answer[answer.length - 1] === "}") {
@@ -208,7 +208,7 @@ function parseQuestion(question: Question): MultipleChoiceQuestion {
     answers.push(parseSingleAnswer(answer));
   }
 
-  return new MultipleChoiceQuestion(prompt, answers, parseSingleAnswer(question.correctAnswer));
+  return new MultipleChoiceQuestion(question.unit, prompt, answers, parseSingleAnswer(question.correctAnswer));
 }
 
 export function questionsFromJSON(json: string): MultipleChoiceQuestion[] {

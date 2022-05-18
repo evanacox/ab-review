@@ -58,9 +58,7 @@ export class NormalMCQuestion extends React.Component<NormalMCProps, NormalMCSta
         <fieldset>
           <div className={"mcq-container"}>{answers}</div>
         </fieldset>
-        <button className={"outline"} onClick={(e) => this.onNextClick(e)}>
-          Next
-        </button>
+        <button onClick={(e) => this.onNextClick(e)}>Next</button>
       </div>
     );
   }

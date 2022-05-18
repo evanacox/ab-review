@@ -15,6 +15,8 @@ import { addStyles } from "react-mathquill";
 import { Provider } from "@nteract/mathjax";
 import "@picocss/pico";
 import "./index.css";
+import { runPython, runPythonAsync } from "./util/python";
+import { randomDerivative } from "./functions/differentiation";
 
 const mathjaxConfig = {
   CommonHTML: {

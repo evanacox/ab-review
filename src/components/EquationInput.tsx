@@ -9,16 +9,14 @@
 //======---------------------------------------------------------------======//
 
 import React from "react";
-import { EditableMathField, MathField } from "react-mathquill";
-import { replaceIfNotSubstring } from "../util/strings";
 
-export interface EquationInputProps {}
+export interface EquationInputProps {
+  onChange: (data: string) => void;
+}
 
 interface EquationState {
   input: string;
 }
-
-type ShortcutData = [string, string, string, ((mathField: MathField) => void) | null];
 
 export class EquationInput extends React.Component<EquationInputProps, {}> {
   public state: EquationState;
@@ -26,56 +24,6 @@ export class EquationInput extends React.Component<EquationInputProps, {}> {
   public constructor(props: EquationInputProps) {
     super(props);
     this.state = { input: "" };
-  }
-
-  public render(): JSX.Element {
-    return (
-      <div className={"container"}>
-        <EditableMathField latex={this.state.input} onChange={(field) => this.updateFromLatex(field)} />
-      </div>
-    );
-  }
-
-  private static shortcuts: ShortcutData[] = [
-    [
-      "int",
-      "\\int_",
-      "\\int_{ }^{ }",
-      (mathField: MathField) => {
-        mathField.keystroke("Left");
-        mathField.keystroke("Left");
-      },
-    ],
-    ["iint", "\\int", "\\int", null],
-    [
-      "sqrt",
-      "\\sqrt",
-      "\\sqrt{ }",
-      (mathField: MathField) => {
-        mathField.keystroke("Left");
-      },
-    ],
-    ["pi", "\\pi", "\\pi", null],
-  ];
-
-  public updateFromLatex(mathField: MathField) {
-    const latex = mathField.latex();
-
-    for (const [needle, needleFull, replaceWith, updater] of EquationInput.shortcuts) {
-      const replaced = replaceIfNotSubstring(latex, needle, needleFull, replaceWith);
-
-      if (replaced !== latex) {
-        mathField.latex(replaced);
-
-        if (updater !== null) {
-          updater(mathField);
-        }
-      }
-    }
-
-    super.setState((state, props) => {
-      return { input: mathField.latex() };
-    });
   }
 }
 

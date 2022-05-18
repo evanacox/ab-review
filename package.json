@@ -9,6 +9,7 @@
     "@types/react-transition-group": "^4.4.4",
     "algebrite": "^1.4.0",
     "mathjs": "^10.5.3",
+    "nerdamer": "^1.1.13",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-mathquill": "^1.0.2",

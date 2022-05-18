@@ -8,10 +8,11 @@
 //                                                                           //
 //======---------------------------------------------------------------======//
 
-import { MultipleChoiceQuestion } from "../components/MultipleChoiceQuestion";
+import { MultipleChoiceQuestion, SingleAnswer } from "../components/MultipleChoiceQuestion";
 
 export interface MCQSetCorrectIncorrectInfo {
-  answers: Map<number, boolean>;
+  // SingleAnswer == the answer that was picked by the user
+  answers: Map<number, [boolean, SingleAnswer | null]>;
 }
 
 export interface MCQSetProps {

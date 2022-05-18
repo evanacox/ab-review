@@ -9,6 +9,7 @@
 //======---------------------------------------------------------------======//
 
 export interface Question {
+  unit: number;
   prompt: string[];
   incorrectAnswers: string[];
   correctAnswer: string;
@@ -162,6 +163,7 @@ function r(name: string) {
 const typeMap: any = {
   Question: o(
     [
+      { json: "unit", js: "unit", typ: 0 },
       { json: "prompt", js: "prompt", typ: a("") },
       { json: "incorrectAnswers", js: "incorrectAnswers", typ: a("") },
       { json: "correctAnswer", js: "correctAnswer", typ: "" },

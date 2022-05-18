@@ -47,16 +47,6 @@ export class Nav extends React.Component<NavProps, {}> {
         </ul>
         <ul>
           <li>
-            <a href="#" onClick={() => this.props.onPageChange(Page.Integration)}>
-              Integration
-            </a>
-          </li>
-          <li>
-            <a href="#" onClick={() => this.props.onPageChange(Page.Differentiation)}>
-              Differentiation
-            </a>
-          </li>
-          <li>
             <input
               ref={this.fileUploader}
               id={"mcq-uploader"}
@@ -70,7 +60,7 @@ export class Nav extends React.Component<NavProps, {}> {
           </li>
           <li>
             <a href="#" role="button" onClick={() => this.props.onPageChange(Page.MockExam)}>
-              Mock Exam
+              Practice Test
             </a>
           </li>
         </ul>
