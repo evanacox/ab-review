@@ -139,18 +139,6 @@
     "correctAnswer": "`\\frac{-2x^{4}+3x^{2}-2x^{2}+9x+10}{\\left(x^{2}+5\\right)^{2}}`"
   },
   {
-    "unit": 1,
-    "prompt": [
-      "Consider the constant `k`, such that `6 < k < 7` is true. It is known that `k` is an integer. Find the value of `k`."
-    ],
-    "incorrectAnswers": [
-      "nonexistent, because there are no integers in the open interval `(6, 7)`.",
-      "nonexistent, because thrembo is not a real number.",
-      "`6.5`"
-    ],
-    "correctAnswer": "thrembo (`Ϫ`)"
-  },
-  {
     "unit": 2,
     "prompt": [
       "If `f(x)=\\csc(x)+\\tan(x)`, find `f'(x)`."
