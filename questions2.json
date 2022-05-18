@@ -306,11 +306,11 @@
         "The differentiable function `A(t)` represents the rate at which apples are being picked off of the trees in an apple orchard. Which of the following statements would justify that the rate at which the apples are being picked is decreasing?"
       ],
       "incorrectAnswers": [
-        "`A(t)` > 0",
-        "`A'(t)` > 0",
-        "`A(t)` < 0"
+        "`A(t) > 0`",
+        "`A'(t) > 0`",
+        "`A(t) < 0`"
       ],
-      "correctAnswer": "`A'(t)` < 0"
+      "correctAnswer": "`A'(t) < 0`"
     },
     {
       "unit": 4,
@@ -318,11 +318,11 @@
         "Let `M(t)`, a differentiable function, represent the rate at which mercury is being poured into a vile in milliliters(mL) after `t` seconds and `S(t)`, a differentiable function, represents the rate at which the mercury is being pumped out of the vile into a tube in mililiters after `t` seconds. Which of the following would represent that the rate of change of the amount of mercury in the vile is increasing at `t` = 4 seconds?"
       ],
       "incorrectAnswers": [
-        "`M`(4) > 0",
-        "`M'`(4) > 0",
-        "`M'`(4) - `S'`(4) > 0"
+        "`M(4) > 0`",
+        "`M'(4) > 0`",
+        "`M'(4) - S'(4) > 0`"
       ],
-      "correctAnswer": "`M`(4) - `S`(4) > 0"
+      "correctAnswer": "`M(4) - S(4) > 0`"
     },
     {
       "unit": 4,
@@ -330,7 +330,7 @@
         "The radius of a circle is increasing at a constant rate of 4 centimeters(cm) per minute. What is the rate of change of the area of the circle, in square centimeters per minute, at the instant that the radius `r` = 16 centimeters?"
       ],
       "incorrectAnswers": [
-        "'256\\pi'",
+        "`256\\pi`",
         "`64\\pi`",
         "`32\\pi`"
       ],
@@ -430,7 +430,7 @@
         "`g(x)` has a maximum value on [`a`,`b`]",
         "`g'(x)`<0 for some `x` on [`a`,`b`]"
       ],
-      "correctAnswer": "`g(x)`>0 for some `x` on [`a`,`b`]"
+      "correctAnswer": "`g(x) > 0` for some `x` on `[a, b]`"
     },
     {
       "unit": 5,
