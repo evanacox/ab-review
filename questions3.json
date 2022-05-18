@@ -205,7 +205,7 @@
   {
     "unit": 2,
     "prompt": [
-      "`\\lim\\limits_{x \\to 4}{\\frac{\\sin(x)-\\sin(4)}}{x-4} =`"
+      "`\\lim\\limits_{x \\to 4}{\\frac{\\sin(x)-\\sin(4)}{x-4}} =`"
     ],
     "incorrectAnswers": [
       "`\\cos(x)`",
