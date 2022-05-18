@@ -755,6 +755,45 @@
     "correctAnswer": "`-\\tan^{-1}\\left(x-3\\right)+C`"
   },
   {
+    "unit": 6,
+    "prompt": [
+      "`f\\left(x\\right)=\\int_{x}^{-2}t^{2}dt`",
+      "Find `f(4)`."
+    ],
+    "incorrectAnswers": [
+      "`\\frac{64}{3}`",
+      "`24`",
+      "`-\\frac{64}{3}`"
+    ],
+    "correctAnswer": "`-24`"
+  },
+  {
+    "unit": 6,
+    "prompt": [
+      "`g\\left(x\\right)=\\int_{x}^{2}\\left(t^{3}-4t\\right)dt`",
+      "Consider the twice-differentiable function `g`. What is `g''`?"
+    ],
+    "incorrectAnswers": [
+      "`4t-t^{3}`",
+      "`-6t`",
+      "`3t^{2}-4`"
+    ],
+    "correctAnswer": "`4-3t^{2}`"
+  },
+  {
+    "unit": 6,
+    "prompt": [
+      "`\\lim\\limits_{n \\to \\infty}{\\sum_{k=1}^{n}\\left(3\\left(3+\\frac{3k}{n}\\right)^{3}\\right)\\left(\\frac{3}{n}\\right)}`",
+      "Consider the limit above. Which of the following expressions is equivalent to the limit?"
+    ],
+    "incorrectAnswers": [
+      "`\\int_{0}^{3}3\\left(x\\right)^{3}dx`",
+      "`\\int_{3}^{6}\\left(x\\right)^{3}dx`",
+      "`\\int_{6}^{9}\\left(x\\right)^{3}dx`"
+    ],
+    "correctAnswer": "`\\int_{3}^{6}3\\left(x\\right)^3dx`"
+  },
+  {
     "unit": 7,
     "prompt": [
       "The rate of change of the volume `V` with respect to time `t` of water leaking from a container is proportional to the cube of the volume. Which of the following is a differential equation that could describe this relationship?"
@@ -828,6 +867,30 @@
       "`70` grams"
     ],
     "correctAnswer": "`270` grams"
+  },
+  {
+    "unit": 7,
+    "prompt": [
+      "Which of the following is a solution to the differential equation `4y-y''=0`?"
+    ],
+    "incorrectAnswers": [
+      "`e^{4x}`",
+      "`\\sin(\\frac{\\pi}{2}x)`",
+      "`\\cos(2x)`"
+    ],
+    "correctAnswer": "`e^{2x}`"
+  },
+  {
+    "unit": 7,
+    "prompt": [
+      "Which of the following is a solution to the differential equation `4y-y''=0`?"
+    ],
+    "incorrectAnswers": [
+      "`e^{4x}`",
+      "`\\sin(\\frac{\\pi}{2}x)`",
+      "`\\cos(2x)`"
+    ],
+    "correctAnswer": "`e^{2x}`"
   },
   {
     "unit": 8,
