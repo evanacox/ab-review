@@ -341,7 +341,7 @@
   {
     "unit": 3,
     "prompt": [
-      "Given `tan(y)=2x^{2}`, find `\\frac{dy}{dx}`",
+      "Given `tan(y)=2x^{2}`, find `\\frac{dy}{dx}`"
     ],
     "incorrectAnswers": [
       "`\\frac{1}{\\sec^{2}\\left(y\\right)}`",
