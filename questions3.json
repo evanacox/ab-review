@@ -139,6 +139,18 @@
     "correctAnswer": "`\\frac{-2x^{4}+3x^{2}-2x^{2}+9x+10}{\\left(x^{2}+5\\right)^{2}}`"
   },
   {
+    "unit": 1,
+    "prompt": [
+      "It is known that `6 < k < 7`, where `k` is an integer. Which statement correctly identifies if `k` exists and why?"
+    ],
+    "incorrectAnswers": [
+      "nonexistent, because there are no integers in the open interval `(6, 7)`",
+      "nonexistent, because thrembo is not a real number",
+      "`6.5`, because `6 < 6.5 < 7`."
+    ],
+    "correctAnswer": "`Ϫ`, because `6 < Ϫ < 7` and because thrembo (`Ϫ`) is an integer."
+  },
+  {
     "unit": 2,
     "prompt": [
       "If `f(x)=\\csc(x)+\\tan(x)`, find `f'(x)`."
